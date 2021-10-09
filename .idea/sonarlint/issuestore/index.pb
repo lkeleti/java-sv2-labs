@@ -46,3 +46,21 @@ _
 -src/main/java/packages/namemain/NameMain.java,5\2\52b107a465bde15db6972da1c514168384a94642
 \
 ,src/main/java/stringtype/StringTypeMain.java,f\a\fab988e454c607ff02f28c69ec36dfb4b471a5b9
+h
+8src/main/java/stringtype/registration/UserValidator.java,d\3\d3fda70693551886fef98aec6cd84be75b8d08ad
+g
+7src/main/java/stringtype/registration/Registration.java,6\7\67857170c8a89c06f1e0bf6d0945f19be39558cd
+P
+ src/main/java/javaapi/Upper.java,c\2\c23ba5dd76f02dbae17fad1d81a615ec594f36d9
+P
+ src/main/java/linebreak/Car.java,0\2\02f596807cd388c33f9ee4aedbc7c65e9607df75
+V
+&src/main/java/linebreak/CityNames.java,1\c\1c9ef232f439a60d986db2aa56241c739c91d284
+U
+%src/main/java/introdate/Employee.java,7\9\794ef55ceeb3a75a8c337108ea34e5e2b1fdb54b
+Y
+)src/main/java/introdate/EmployeeTest.java,3\f\3f4c4ed1fa027a9f74b44b7a36a145b844851fba
+X
+(src/main/java/introdate/Performance.java,d\2\d22c932d2f9a29a9bfb3d053271324407d9e889e
+\
+,src/main/java/introdate/PerformanceTest.java,7\c\7c9f6d46b814e20a74998298321afb3f3132ff51

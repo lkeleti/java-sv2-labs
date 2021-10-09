@@ -10,13 +10,13 @@ public class BoatRental {
         System.out.println("Kérem írja be a csoport létszámát: ");
         int person = scanner.nextInt();
 
-        if (person >= 5 ) {
+        if (person > 3 ) {
             System.out.println("Elvitték az ötös csónakot.");
             person -= 5;
             freeSeat -=5;
         }
 
-        if (person >= 3) {
+        if (person > 2) {
             System.out.println("Elvitték a hármas csónakot.");
             person -= 3;
             freeSeat -=3;
