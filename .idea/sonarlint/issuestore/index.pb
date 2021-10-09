@@ -23,3 +23,12 @@ R
 .src/main/java/localvariables/DistanceMain.java,3\d\3df913e6b3df22f721ae2ed7d8b05a6c93758d9c
 Z
 *src/main/java/localvariables/Distance.java,d\e\de465e6dafde5e05caf159e1f22b1d168ec754c0
+X
+(src/main/java/statements/DivByThree.java,f\1\f11482fc15068604411be617772b22c30a52638f
+X
+(src/main/java/statements/Investment.java,d\9\d9ab34db61e5021c5f6f3f627234e24d16d3c103
+\
+,src/main/java/statements/InvestmentMain.java,c\b\cb4928959adc98445e23c8dd1007b3ac1220b40f
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
