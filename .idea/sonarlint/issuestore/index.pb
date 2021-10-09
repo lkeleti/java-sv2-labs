@@ -32,3 +32,17 @@ X
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+]
+-src/main/java/packages/greetings/Greeter.java,9\d\9da934c617f568bb16176c3a52d65b8c5a166405
+\
+,src/main/java/packages/main/MainProgram.java,4\8\48fffe610a350fcef6df07b85e28bbd15012f966
+Y
+)src/main/java/packages/prefix/Prefix.java,9\9\9945c60f2d5d56023df60499aba44b8a1459f060
+_
+/src/main/java/packages/firstname/FirstName.java,c\c\ccb9ebed0f923bb6bb9ac7578531ef4e610aa303
+]
+-src/main/java/packages/lastname/LastName.java,2\c\2c96bcca98fddf09eb2ce2d4d725e33d5d7aaa02
+]
+-src/main/java/packages/namemain/NameMain.java,5\2\52b107a465bde15db6972da1c514168384a94642
+\
+,src/main/java/stringtype/StringTypeMain.java,f\a\fab988e454c607ff02f28c69ec36dfb4b471a5b9
