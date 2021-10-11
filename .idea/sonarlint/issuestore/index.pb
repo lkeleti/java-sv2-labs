@@ -78,16 +78,12 @@ Z
 *src/main/java/introcontrol/BoatRental.java,5\1\51b024fdc338d413dfa02a35487962298d02f1ad
 R
 "src/main/java/array/ArrayMain.java,4\3\439ee17ddae4c07133e51e7f55b12a36b1c69404
-U
-%src/main/java/array/ArrayHandler.java,d\9\d9968ad0b3305eca5c8b67073bb5ae9161f9fe2d
 _
 /src/main/java/cmdarguments/flowers/CmdMain.java,3\f\3f583ac86c8dfae14ce021ebaa8f122053220ff5
 _
 /src/main/java/cmdarguments/verse/VerseMain.java,a\b\ab7f2aed0de6c42e8709ee36af425b5e031c05a5
 c
 3src/main/java/cmdarguments/operation/Operation.java,a\1\a1d4544a9f56b3bb2d3c372afb2027efe94984c3
-^
-.src/main/java/arrayofarrays/ArrayOfArrays.java,e\5\e5e5cedb011a409130e978244b5849ea695ad3f4
 Z
 *src/main/java/arrayofarrays/Rectangle.java,d\9\d90822452202468f43c607789731e4518924df4a
 [
