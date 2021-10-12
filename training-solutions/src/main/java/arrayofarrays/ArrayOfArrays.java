@@ -1,7 +1,5 @@
 package arrayofarrays;
 
-import array.ArrayHandler;
-
 public class ArrayOfArrays {
     public void printArrayOfArrays(int[][] a) {
         for (int i = 0;  i < a.length; i++) {

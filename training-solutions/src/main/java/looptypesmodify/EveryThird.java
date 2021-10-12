@@ -1,7 +1,5 @@
 package looptypesmodify;
 
-import arrayofarrays.ArrayOfArrays;
-
 import java.util.Arrays;
 
 public class EveryThird {
