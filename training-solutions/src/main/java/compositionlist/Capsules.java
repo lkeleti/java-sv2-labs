@@ -14,10 +14,14 @@ public class Capsules {
         colours.add(0, newColour);
     }
     public void removeFirst() {
-        colours.remove(0);
+        if (colours.size() > 0) {
+            colours.remove(0);
+        }
     }
     public void removeLast() {
-        colours.remove(colours.size()-1);
+        if (colours.size() > 0) {
+            colours.remove(colours.size() - 1);
+        }
     }
 
     public List<String> getColors() {
