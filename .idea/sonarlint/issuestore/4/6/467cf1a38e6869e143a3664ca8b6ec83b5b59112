@@ -1,13 +1,0 @@
-
-S	java:S106	"9Replace this use of System.out or System.err by a logger.(š—°øÿÿÿÿ
-S	java:S106"9Replace this use of System.out or System.err by a logger.(æ¨¤šøÿÿÿÿ
-S	java:S106"9Replace this use of System.out or System.err by a logger.(´‹¹öşÿÿÿÿ
-S	java:S106"9Replace this use of System.out or System.err by a logger.(Ã”…ªûÿÿÿÿ
-S	java:S106"9Replace this use of System.out or System.err by a logger.(æ–İ€ÿÿÿÿÿ
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(Å­Ëİúÿÿÿÿ8æÎº‰Æ/
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(¤¸¤ûÿÿÿÿ8ÓÃ¼‰Æ/
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(µÏ…èùÿÿÿÿ8û÷¾‰Æ/
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(æ¨¤šøÿÿÿÿ8ü÷¾‰Æ/
-Z	java:S106!"9Replace this use of System.out or System.err by a logger.(æ¨¤šøÿÿÿÿ8ÙŸÀ‰Æ/
-H
-java:S1199"-Extract this nested code block into a method.(ÒÌâ–øÿÿÿÿ
