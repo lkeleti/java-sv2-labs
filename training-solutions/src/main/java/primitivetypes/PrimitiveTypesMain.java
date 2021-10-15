@@ -45,5 +45,46 @@ public class PrimitiveTypesMain {
         System.out.println(h);
         System.out.println(i);
         System.out.println(j);
+
+        //Logikai értékek
+        //k változó: a típusa legyen boolean, az értéke true
+        boolean k = true;
+        //l változó: a típusa legyen Boolean, az értéke true
+        Boolean l = true;
+        /* m változó: a típusa legyen boolean, az értékét úgy add meg, hogy a Boolean osztály megfelelő
+        metódusával hozz létre egy új Boolean objektumot a true logikai literálból!
+         */
+        boolean m = Boolean.valueOf(true);
+        /* n változó: a típusa legyen Boolean, az értékét úgy add meg, hogy a Boolean osztály megfelelő
+        metódusával hozz létre egy új Boolean objektumot a true logikai literálból!
+         */
+        Boolean n = new Boolean(true);
+        /* o változó: a típusa legyen boolean, az értékét úgy add meg, hogy a Boolean osztály megfelelő
+        metódusával hozz létre egy új boolean típusú értéket a "TrUe" szövegből!
+         */
+        boolean o = Boolean.valueOf("TrUe");
+        /* p változó: a típusa legyen Boolean, az értékét úgy add meg, hogy a Boolean osztály megfelelő
+        metódusával hozz létre egy új boolean típusú értéket a "TrUe" szövegből!
+         */
+        Boolean p = Boolean.valueOf("TrUe");
+        /* q változó: a típusa legyen boolean, az értékét úgy add meg, hogy a Boolean osztály megfelelő
+        metódusával hozz létre egy új boolean típusú értéket a "TreU" szövegből!
+         */
+        boolean q = Boolean.valueOf("TreU");
+        /* r változó: a típusa legyen Boolean, az értékét úgy add meg, hogy a Boolean osztály megfelelő
+        metódusával hozz létre egy új boolean típusú értéket a "TreU" szövegből!
+         */
+        Boolean r = Boolean.valueOf("TreU");
+
+        System.out.println(k);
+        System.out.println(l);
+        System.out.println(m);
+        System.out.println(n);
+        System.out.println(o);
+        System.out.println(p);
+        System.out.println(q);
+        System.out.println(r);
+
+
     }
 }
