@@ -1,5 +1,8 @@
 package looptypesmodify;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Student {
     private String name;
     private boolean active;
@@ -23,5 +26,15 @@ public class Student {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public void removeInactive(List<Student> students) {
+        List<Student> studentsToRemove = new ArrayList<>();
+        for (Student student: students) {
+            if (!student.isActive()) {
+                studentsToRemove.add(student);
+            }
+        }
+        students.removeAll(studentsToRemove);
     }
 }

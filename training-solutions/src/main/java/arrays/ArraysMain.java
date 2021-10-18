@@ -74,7 +74,7 @@ public class ArraysMain {
         System.out.println("Vizsgálat utáni tipp: " + Arrays.toString(played));
         System.out.println("Vizsgálat utáni húzott számok: " + Arrays.toString(pulled));
 
-        System.out.println("Nyeerő számok vizsgálata:");
+        System.out.println("Nyerő számok vizsgálata:");
         System.out.println("Eredeti nyerő tipp: " + Arrays.toString(winner));
         System.out.println("Húzott számok: " + Arrays.toString(pulled));
         System.out.println("Ötösünk lett? " + arraysMain.wonLottery(winner,pulled));
