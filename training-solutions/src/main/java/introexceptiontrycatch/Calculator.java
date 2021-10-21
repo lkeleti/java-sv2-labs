@@ -64,7 +64,5 @@ public class Calculator {
         else {
             System.out.println("A számológép csak számokal képes műveleteket végezni!");
         }
-
-
     }
 }
