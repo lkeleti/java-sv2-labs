@@ -1,9 +1,8 @@
-package introexceptiontrycatch;
+package introexceptiontrycatchtrace;
 
 import java.util.Scanner;
 
-public class Calculator {
-
+public class CalculatorMain {
     public Integer readNumber(Scanner scanner) {
         Integer number = null;
         System.out.print("Kérem írja be a számot amivel műveletet szeretne elvégezni: ");
@@ -22,13 +21,14 @@ public class Calculator {
         final String RESULTSTRINGINTEGER = "%d %s %d művelet eredménye %d";
         final String RESULTSTRINGDOUBLE = "%d %s %d művelet eredménye %.4f";
 
+        CalculatorMain calculatorMain = new CalculatorMain();
         Calculator calculator = new Calculator();
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Egyszerű számológép:");
 
-        Integer numberOne = calculator.readNumber(scanner);
-        Integer numberTwo = calculator.readNumber(scanner);
+        Integer numberOne = calculatorMain.readNumber(scanner);
+        Integer numberTwo = calculatorMain.readNumber(scanner);
 
         if (numberOne != null && numberTwo != null) {
             System.out.println("Kérerm írja be, hogy milyen műveletet végezzek el az előbbi két számmal!");
@@ -46,16 +46,16 @@ public class Calculator {
 
             switch (operation) {
                 case '+' :
-                    System.out.printf(RESULTSTRINGINTEGER, numberOne, operation, numberTwo, numberOne+numberTwo);
+                    System.out.printf(RESULTSTRINGINTEGER, numberOne, operation, numberTwo, calculator.sumNumbers(numberOne, numberTwo));
                     break;
                 case '-' :
-                    System.out.printf(RESULTSTRINGINTEGER, numberOne, operation, numberTwo, numberOne-numberTwo);
+                    System.out.printf(RESULTSTRINGINTEGER, numberOne, operation, numberTwo, calculator.extractNumbers(numberOne, numberTwo));
                     break;
                 case '*' :
-                    System.out.printf(RESULTSTRINGINTEGER, numberOne, operation, numberTwo, numberOne*numberTwo);
+                    System.out.printf(RESULTSTRINGINTEGER, numberOne, operation, numberTwo, calculator.multiplyNumbers(numberOne, numberTwo));
                     break;
                 case '/':
-                    System.out.printf(RESULTSTRINGDOUBLE, numberOne, operation, numberTwo, (double)numberOne / numberTwo);
+                    System.out.printf(RESULTSTRINGDOUBLE, numberOne, operation, numberTwo, calculator.divideNumbers(numberOne, numberTwo));
                     break;
                 default:
                     System.out.println("Nem írt be érvényes műveletet!");
