@@ -4,9 +4,6 @@ import java.util.Scanner;
 
 public class Calculator {
 
-    public final String RESULTSTRINGINTEGER = "%d %s %d művelet eredménye %d";
-    public final String RESULTSTRINGDOUBLE = "%d %s %d művelet eredménye %.4f";
-
     public Integer readNumber(Scanner scanner) {
         Integer number = null;
         System.out.print("Kérem írja be a számot amivel műveletet szeretne elvégezni: ");
@@ -22,6 +19,9 @@ public class Calculator {
     }
 
     public static void main(String[] args) {
+        final String RESULTSTRINGINTEGER = "%d %s %d művelet eredménye %d";
+        final String RESULTSTRINGDOUBLE = "%d %s %d művelet eredménye %.4f";
+
         Calculator calculator = new Calculator();
 
         Scanner scanner = new Scanner(System.in);
@@ -46,16 +46,16 @@ public class Calculator {
 
             switch (operation) {
                 case '+' :
-                    System.out.printf(calculator.RESULTSTRINGINTEGER, numberOne, operation, numberTwo, numberOne+numberTwo);
+                    System.out.printf(RESULTSTRINGINTEGER, numberOne, operation, numberTwo, numberOne+numberTwo);
                     break;
                 case '-' :
-                    System.out.printf(calculator.RESULTSTRINGINTEGER, numberOne, operation, numberTwo, numberOne-numberTwo);
+                    System.out.printf(RESULTSTRINGINTEGER, numberOne, operation, numberTwo, numberOne-numberTwo);
                     break;
                 case '*' :
-                    System.out.printf(calculator.RESULTSTRINGINTEGER, numberOne, operation, numberTwo, numberOne*numberTwo);
+                    System.out.printf(RESULTSTRINGINTEGER, numberOne, operation, numberTwo, numberOne*numberTwo);
                     break;
                 case '/':
-                    System.out.printf(calculator.RESULTSTRINGDOUBLE, numberOne, operation, numberTwo, (double)numberOne / numberTwo);
+                    System.out.printf(RESULTSTRINGDOUBLE, numberOne, operation, numberTwo, (double)numberOne / numberTwo);
                     break;
                 default:
                     System.out.println("Nem írt be érvényes műveletet!");
