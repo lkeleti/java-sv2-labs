@@ -6,7 +6,7 @@ public class NeptunMain {
     public static void main(String[] args) {
         Neptun neptun = new Neptun();
         try {
-            neptun.prepareDatas("neptun.csv");
+            neptun.prepareDatas("src/main/resources/neptun.csv");
             System.out.println(neptun.getNeptunCodes());
         }
         catch (IOException ioe) {

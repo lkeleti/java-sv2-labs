@@ -8,7 +8,7 @@ import java.util.List;
 public class Shopping {
     public static void main(String[] args) {
         try {
-            List<String> shoppingList = Files.readAllLines(Paths.get("shoppinglist.txt"));
+            List<String> shoppingList = Files.readAllLines(Paths.get("src/main/resources/shoppinglist.txt"));
             System.out.println(shoppingList);
         }
         catch (IOException ioe) {

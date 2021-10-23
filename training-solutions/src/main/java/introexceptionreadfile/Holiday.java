@@ -8,7 +8,7 @@ import java.util.List;
 public class Holiday {
     public static void main(String[] args) {
         try {
-            List<String> lines = Files.readAllLines(Paths.get("holiday.txt"));
+            List<String> lines = Files.readAllLines(Paths.get("src/main/resources/holiday.txt"));
             System.out.println(lines);
         }
         catch (IOException ioe)
