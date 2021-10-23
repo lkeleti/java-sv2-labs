@@ -1,14 +1,14 @@
 package controladvanced.labels;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 class LabelsTest {
     @Test
-    void getTableOfNumbersTest () {
+    public void getTableOfNumbersTest () {
         Labels labels = new Labels();
 
         System.out.println(Arrays.deepToString(labels.getTableOfNumbers(10)));

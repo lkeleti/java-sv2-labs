@@ -1,14 +1,14 @@
 package introjunit;
-/*
+
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
-*/
+
 public class GentlemanTest {
-//    @Test
+    @Test
     public void testGentleman(){
-/*        //Given
+        //Given
         Gentleman gentleman = new Gentleman();
 
         //When
@@ -21,7 +21,5 @@ public class GentlemanTest {
         greeting = gentleman.sayHello(null);
         //Then
         assertThat(greeting, equalTo("Hello Anonymous!"));
- */
     }
-
 }
