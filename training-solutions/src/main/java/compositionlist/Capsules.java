@@ -1,7 +1,6 @@
 package compositionlist;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Capsules {
@@ -14,12 +13,12 @@ public class Capsules {
         colours.add(0, newColour);
     }
     public void removeFirst() {
-        if (colours.size() > 0) {
+        if (!colours.isEmpty()) {
             colours.remove(0);
         }
     }
     public void removeLast() {
-        if (colours.size() > 0) {
+        if (!colours.isEmpty()) {
             colours.remove(colours.size() - 1);
         }
     }
@@ -27,5 +26,4 @@ public class Capsules {
     public List<String> getColors() {
         return colours;
     }
-
 }

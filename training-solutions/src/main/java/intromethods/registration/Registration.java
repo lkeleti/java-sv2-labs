@@ -37,7 +37,5 @@ public class Registration {
         Person person = new Person(name, birthDate, email);
 
         System.out.println(person);
-
-
     }
 }

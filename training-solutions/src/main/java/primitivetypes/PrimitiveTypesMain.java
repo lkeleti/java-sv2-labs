@@ -84,7 +84,5 @@ public class PrimitiveTypesMain {
         System.out.println(p);
         System.out.println(q);
         System.out.println(r);
-
-
     }
 }

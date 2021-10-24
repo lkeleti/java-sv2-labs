@@ -7,7 +7,6 @@ import java.util.List;
 public class ObjectsMain {
     public static void main(String[] args) {
         class Book {
-
         }
 
         new Book();
@@ -61,7 +60,5 @@ public class ObjectsMain {
         System.out.println(Arrays.toString(books));
         System.out.println(bookList);
         System.out.println(newBookList);
-
-
     }
 }

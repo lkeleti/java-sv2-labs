@@ -1,6 +1,5 @@
 package references.dogs;
 
-import java.io.LineNumberInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -92,7 +91,5 @@ public class Kennel {
 
         System.out.println(dogs1);
         // Igazolódott. :)
-
-
     }
 }

@@ -23,5 +23,4 @@ public class Conversion {
         double result = (number - intNumber) * 10;
         return (int) result;
     }
-
 }

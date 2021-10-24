@@ -14,5 +14,4 @@ public class EmployeeMain {
         System.out.println(employee.getSalary());
         System.out.println(employee);
     }
-
 }

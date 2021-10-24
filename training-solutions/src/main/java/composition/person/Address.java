@@ -44,5 +44,4 @@ public class Address {
                 ", zipCode='" + zipCode + '\'' +
                 '}';
     }
-
 }

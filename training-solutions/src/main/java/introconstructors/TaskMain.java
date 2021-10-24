@@ -16,6 +16,5 @@ public class TaskMain {
         System.out.println("A feladat leírása: " + task.getDescription());
         System.out.println("A feladat kezdése (elkezdődött): " + task.getStartDateTime());
         System.out.println("A feladat hossza: " + task.getDuration());
-
     }
 }
