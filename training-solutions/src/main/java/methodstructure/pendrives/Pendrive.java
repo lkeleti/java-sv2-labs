@@ -1,4 +1,4 @@
-package methodstructure;
+package methodstructure.pendrives;
 
 public class Pendrive {
     private String name;
