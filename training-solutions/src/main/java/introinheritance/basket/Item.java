@@ -6,6 +6,13 @@ public class Item {
     private int vatPercent;
 
     public Item(String barcode, double nettoPrice, int vatPercent) {
+        if (barcode == null || barcode.isEmpty() || barcode.isBlank()) {
+            throw new IllegalArgumentException("Invalid barcode!");
+        }
+
+        if (nettoPrice <= 0 ||vatPercent <= 0) {
+            throw new IllegalArgumentException("Invalid price or vat!");
+        }
         this.barcode = barcode;
         this.nettoPrice = nettoPrice;
         this.vatPercent = vatPercent;
