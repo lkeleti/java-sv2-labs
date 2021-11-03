@@ -75,6 +75,7 @@ public class MeetingRoomController {
                     break;
                 case 4:
                     office.printEvenNames();
+                    break;
                 case 5:
                     office.printArea();
                     break;
@@ -86,6 +87,8 @@ public class MeetingRoomController {
                     break;
                 case 8:
                     office.printAreasLargerThan(readMeeteingRoomArea());
+                    break;
+                default:
                     break;
             }
         }
