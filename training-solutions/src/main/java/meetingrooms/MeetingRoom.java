@@ -5,10 +5,26 @@ public class MeetingRoom {
     private int length;
     private int width;
 
+    private boolean checkName (String name) {
+        return (name != null && name.trim().length() > 0);
+    }
+
+    private boolean checkGreaterThanZero(int value) {
+        return value > 0;
+    }
+
     public MeetingRoom(String name, int length, int width) {
-        this.name = name;
-        this.length = length;
-        this.width = width;
+        if (checkName(name)) {
+            this.name = name;
+        }
+
+        if (checkGreaterThanZero(length)) {
+            this.length = length;
+        }
+
+        if (checkGreaterThanZero(width)) {
+            this.width = width;
+        }
     }
 
     public int getArea() {
@@ -20,7 +36,9 @@ public class MeetingRoom {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (checkName(name)) {
+            this.name = name;
+        }
     }
 
     public int getLength() {
@@ -28,7 +46,9 @@ public class MeetingRoom {
     }
 
     public void setLength(int length) {
-        this.length = length;
+        if (checkGreaterThanZero(length)) {
+            this.length = length;
+        }
     }
 
     public int getWidth() {
@@ -36,7 +56,9 @@ public class MeetingRoom {
     }
 
     public void setWidth(int width) {
-        this.width = width;
+        if (checkGreaterThanZero(width)) {
+            this.width = width;
+        }
     }
 
     @Override

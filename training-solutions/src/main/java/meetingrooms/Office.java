@@ -8,7 +8,9 @@ public class Office {
     private List<MeetingRoom> meetingRooms = new ArrayList<>();
 
     public void addMeetingRoom(MeetingRoom meetingRoom) {
-        meetingRooms.add(meetingRoom);
+        if (meetingRoom != null) {
+            meetingRooms.add(meetingRoom);
+        }
     }
 
     public void printNames() {
@@ -18,13 +20,13 @@ public class Office {
     }
 
     public void printNamesReverse() {
-        for (int i = meetingRooms.size()-1; i >=0; i--){
+        for (int i = meetingRooms.size()-1; i >= 0; i--){
             System.out.println(meetingRooms.get(i).getName());
         }
     }
 
     public void printEvenNames() {
-        for (int i = 0; i < meetingRooms.size(); i +=2) {
+        for (int i = 0; i < meetingRooms.size(); i += 2) {
             System.out.println(meetingRooms.get(i).getName());
         }
     }
