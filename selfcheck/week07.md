@@ -5,26 +5,26 @@ Ezen a héten nagyrészt ismétlés következik, néhány újabb ismerettel: a p
 
 ## Programozási tételek és egyéb algoritmusok
 
-* [ ] [Összegzés tétele videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/16980666-osszegzes-tetele)
-* [ ] Összegzés tétele gyakorlati feladat
-* [ ] [Számlálás tétele videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/16980667-szamlalas-tetele)
-* [ ] Számlálás tétele gyakorlati feladat
-* [ ] [Szélsőérték keresés tétele videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/16980670-szelsoertek-kereses-tetele)
-* [ ] Szélsőérték keresés tétele gyakorlati feladat
-* [ ] [Eldöntés tétele videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/16980673-eldontes-tetele)
-* [ ] Eldöntés tétele gyakorlati feladat
-* [ ] [Szűrés videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/18066930-szures)
-* [ ] Szűrés gyakorlati feladat
-* [ ] [Transzformáció videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/18066933-transzformacio)
-* [ ] Transzformáció gyakorlati feladat
-* [ ] [Rekurzió videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/16980676-rekurzio)
-* [ ] Rekurzió gyakorlati feladat
+* [x] [Összegzés tétele videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/16980666-osszegzes-tetele)
+* [x] Összegzés tétele gyakorlati feladat
+* [x] [Számlálás tétele videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/16980667-szamlalas-tetele)
+* [x] Számlálás tétele gyakorlati feladat
+* [x] [Szélsőérték keresés tétele videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/16980670-szelsoertek-kereses-tetele)
+* [x] Szélsőérték keresés tétele gyakorlati feladat
+* [x] [Eldöntés tétele videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/16980673-eldontes-tetele)
+* [x] Eldöntés tétele gyakorlati feladat
+* [x] [Szűrés videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/18066930-szures)
+* [x] Szűrés gyakorlati feladat
+* [x] [Transzformáció videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/18066933-transzformacio)
+* [x] Transzformáció gyakorlati feladat
+* [x] [Rekurzió videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/16980676-rekurzio)
+* [x] Rekurzió gyakorlati feladat
   
 ## Attribútumok és metódusok
 
-* [ ] [Immutable objektumok videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/29525738-immutable-objektumok)
+* [x] [Immutable objektumok videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/29525738-immutable-objektumok)
 * [ ] Immutable objektumok gyakorlati feladat
-* [ ] [JavaBeans objektumok videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/29525757-javabeans-objektumok)
+* [x] [JavaBeans objektumok videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/29525757-javabeans-objektumok)
 * [ ] JavaBeans objektumok gyakorlati feladat
 * [ ] [Metódusok videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/29525772-metodusok)
 * [ ] Metódusok gyakorlati feladat
