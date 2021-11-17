@@ -1,18 +1,18 @@
-package spaceInvaders;
+package spaceinvaders;
 
 import javax.swing.*;
 import java.awt.*;
 
+import static spaceinvaders.GameDatas.TILE_SIZE;
+
 public class Spirit {
     private int posX;
     private int posY;
-    private int typeOfSpirit;
     private Image image;
 
     public Spirit(int posX, int posY, int typeOfSpirit) {
         this.posX = posX;
         this.posY = posY;
-        this.typeOfSpirit = typeOfSpirit;
         switch (typeOfSpirit) {
             case 0: {
                 image = new ImageIcon("src/main/resources/spaceinvaders/spaceship.png").getImage();
@@ -71,5 +71,9 @@ public class Spirit {
 
     public void setPosY(int posY) {
         this.posY = posY;
+    }
+
+    public boolean checkCollision(Bullet bullet) {
+        return (bullet.getPosX() - 1 >= posX && bullet.getPosX() + 1 <= posX + TILE_SIZE && bullet.getPosY() - 10 <= posY + TILE_SIZE && bullet.getPosY()-10 >= posY);
     }
 }

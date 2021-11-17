@@ -1,16 +1,17 @@
-package spaceInvaders;
+package spaceinvaders;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+
+import static spaceinvaders.GameDatas.*;
 
 public class GameFrame extends JFrame implements KeyListener {
     private GamePanel gamePanel;
     GameFrame() {
         gamePanel = new GamePanel();
 
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.add(gamePanel);
         this.pack();
         this.setLocationRelativeTo(null);
@@ -20,22 +21,24 @@ public class GameFrame extends JFrame implements KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
+        return;
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_LEFT: {
-                gamePanel.getPlayer().setPosX(gamePanel.getPlayer().getPosX()-5);
+                leftDown = true;
                 break;
             }
 
             case KeyEvent.VK_RIGHT: {
-                gamePanel.getPlayer().setPosX(gamePanel.getPlayer().getPosX()+5);
+                rightDown = true;
                 break;
             }
 
             case KeyEvent.VK_SPACE: {
+                spaceDown = true;
                 break;
             }
         }
@@ -43,7 +46,22 @@ public class GameFrame extends JFrame implements KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
-        System.out.println(e.getKeyCode());
+        switch (e.getKeyCode()) {
+            case KeyEvent.VK_LEFT: {
+                leftDown = false;
+                break;
+            }
+
+            case KeyEvent.VK_RIGHT: {
+                rightDown = false;
+                break;
+            }
+
+            case KeyEvent.VK_SPACE: {
+                spaceDown = false;
+                break;
+            }
+        }
     }
 
     public static void main(String[] args) {
