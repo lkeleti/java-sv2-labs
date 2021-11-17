@@ -14,7 +14,7 @@ public class GamePanel extends JPanel implements ActionListener {
     private Enemies enemies;
     private final Spirit player;
     private Bullets bullets;
-    private int spaceRepeat = 5;
+    private int spaceRepeat = 10;
     private boolean endOfGame = false;
 
     GamePanel(){
@@ -92,7 +92,7 @@ public class GamePanel extends JPanel implements ActionListener {
                 spaceRepeat -= 1;
                 if (spaceRepeat == 0) {
                     bullets.addBullet(new Bullet(player.getPosX() + TILE_SIZE / 2, player.getPosY()));
-                    spaceRepeat = 5;
+                    spaceRepeat = 10;
                 }
             }
         }
