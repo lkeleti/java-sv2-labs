@@ -41,7 +41,7 @@ public class PendriveTest {
         Pendrive pendrive = new Pendrive("Datatraveller", 32, 5000);
         Pendrive pendrive2 = new Pendrive("Kingston", 64, 7000);
 
-        assertTrue(pendrive.cheaperThan(pendrive2));
-        assertFalse(pendrive2.cheaperThan(pendrive));
+        assertTrue(pendrive.isCheaperThan(pendrive2));
+        assertFalse(pendrive2.isCheaperThan(pendrive));
     }
 }

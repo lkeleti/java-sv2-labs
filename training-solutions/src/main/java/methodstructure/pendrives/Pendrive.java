@@ -53,7 +53,7 @@ public class Pendrive {
         }
     }
 
-    public boolean cheaperThan(Pendrive pendrive) {
+    public boolean isCheaperThan(Pendrive pendrive) {
         return price < pendrive.getPrice();
     }
 }

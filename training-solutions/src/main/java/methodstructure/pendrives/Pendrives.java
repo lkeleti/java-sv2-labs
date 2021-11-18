@@ -29,7 +29,7 @@ public class Pendrives {
         Pendrive cheepestPendrive = pendrives.get(0);
         if (pendrives.size() > 1) {
             for (int i = 1; i < pendrives.size(); i++) {
-                if (!cheepestPendrive.cheaperThan(pendrives.get(i))) {
+                if (!cheepestPendrive.isCheaperThan(pendrives.get(i))) {
                     cheepestPendrive = pendrives.get(i);
                 }
             }
