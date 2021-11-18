@@ -1,5 +1,8 @@
-package methodpass;
+package methodpass.troopers;
 
+import methodpass.troopers.HeadQuarter;
+import methodpass.troopers.Position;
+import methodpass.troopers.Trooper;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

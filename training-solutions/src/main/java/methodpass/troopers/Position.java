@@ -1,4 +1,4 @@
-package methodpass;
+package methodpass.troopers;
 
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;

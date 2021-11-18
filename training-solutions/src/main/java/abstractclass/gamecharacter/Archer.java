@@ -1,7 +1,5 @@
 package abstractclass.gamecharacter;
 
-import methodpass.Position;
-
 import java.util.Random;
 
 public class Archer extends Character{
