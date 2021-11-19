@@ -1,4 +1,5 @@
-package methodpass.troopers;
+package troopers;
+
 
 import methodpass.troopers.HeadQuarter;
 import methodpass.troopers.Position;
@@ -7,10 +8,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class HeadQuarterTest {
+public class HeadQuarterTest {
 
     @Test
-    void testAddTrooper() {
+    public void testAddTrooper() {
         HeadQuarter headQuarter = new HeadQuarter();
         Trooper trooper = new Trooper("Jake Doe");
 
@@ -21,7 +22,7 @@ class HeadQuarterTest {
     }
 
     @Test
-    void testMoveTrooperByName() {
+    public void testMoveTrooperByName() {
         HeadQuarter headQuarter = new HeadQuarter();
         Trooper johnTrooper = new Trooper("John Doe");
         Trooper jakeTrooper = new Trooper("Jake Doe");
@@ -39,7 +40,7 @@ class HeadQuarterTest {
     }
 
     @Test
-    void testMoveClosestTrooper() {
+    public void testMoveClosestTrooper() {
         HeadQuarter headQuarter = new HeadQuarter();
         Trooper johnTrooper = new Trooper("John Doe");
         Trooper jakeTrooper = new Trooper("Jake Doe");
@@ -60,4 +61,3 @@ class HeadQuarterTest {
 
     }
 }
-

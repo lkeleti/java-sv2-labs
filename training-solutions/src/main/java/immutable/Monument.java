@@ -4,18 +4,34 @@ import java.time.LocalDate;
 
 public class Monument {
     private final String name;
-    private final String title;
-    private final LocalDate registrationDate;
-    private final String registrationId;
+    private final String address;
+    private final LocalDate dateOfRegistry;
+    private final String registryNumber;
 
-    public Monument(String name, String title, LocalDate registrationDate, String registrationId) {
-        if(isEmpty(name) || isEmpty(title) || isEmpty(registrationId)){
-            throw new IllegalArgumentException("");
+    public Monument(String name, String address, LocalDate dateOfRegistry, String registryNumber) {
+        if(isEmpty(name) || isEmpty(address) || isEmpty(registryNumber)){
+            throw new IllegalArgumentException("Name, address or registry number cannot be empty!");
         }
         this.name = name;
-        this.title = title;
-        this.registrationDate = registrationDate;
-        this.registrationId = registrationId;
+        this.address = address;
+        this.dateOfRegistry = dateOfRegistry;
+        this.registryNumber = registryNumber;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public LocalDate getDateOfRegistry() {
+        return dateOfRegistry;
+    }
+
+    public String getRegistryNumber() {
+        return registryNumber;
     }
 
     private boolean isEmpty(String text) {

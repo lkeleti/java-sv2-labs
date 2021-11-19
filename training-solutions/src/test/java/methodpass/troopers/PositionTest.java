@@ -1,14 +1,15 @@
-package methodpass.troopers;
+package troopers;
+
 
 import methodpass.troopers.Position;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class PositionTest {
+public class PositionTest {
 
     @Test
-    void testDistanceFrom() {
+    public void testDistanceFrom() {
         Position pos1 = new Position(2, 6);
         Position pos2 = new Position(-5, 1.4);
 

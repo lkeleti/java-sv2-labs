@@ -1,4 +1,5 @@
-package methodpass.troopers;
+package troopers;
+
 
 import methodpass.troopers.Position;
 import methodpass.troopers.Trooper;
@@ -6,11 +7,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class TrooperTest {
+public class TrooperTest {
 
 
     @Test
-    void testCreate() {
+    public void testCreate() {
         Trooper trooper = new Trooper("Jake Doe");
 
         assertEquals("Jake Doe", trooper.getName());
@@ -19,7 +20,7 @@ class TrooperTest {
     }
 
     @Test
-    void testCreateWithEmptyName() {
+    public void testCreateWithEmptyName() {
 
         Exception ex = assertThrows(IllegalArgumentException.class, () -> new Trooper(""));
         assertEquals("Name must not be empty.", ex.getMessage());
@@ -27,7 +28,7 @@ class TrooperTest {
     }
 
     @Test
-    void testChangePosition() {
+    public void testChangePosition() {
         Trooper trooper = new Trooper("John Doe");
         Position target = new Position(3, 4);
         trooper.changePosition(target);
@@ -37,14 +38,14 @@ class TrooperTest {
     }
 
     @Test
-    void testChangePositionToNowhere() {
+    public void testChangePositionToNowhere() {
         Trooper trooper = new Trooper("John Doe");
         Exception ex = assertThrows(IllegalArgumentException.class, () -> trooper.changePosition(null));
 
     }
 
     @Test
-    void testDistanceFrom() {
+    public void testDistanceFrom() {
         Trooper trooper = new Trooper("John Doe");
         Position target = new Position(3, 4);
 

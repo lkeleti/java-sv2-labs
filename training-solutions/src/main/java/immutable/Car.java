@@ -4,31 +4,34 @@ import java.time.LocalDate;
 
 public class Car {
 
-    private final  String brandOfCar;
-    private final String typeOfCar;
-    private final int manufacturingYear;
+    private final  String brand;
+    private final String model;
+    private final int yearOfProduction;
 
-    public Car(String brandOfCar, String typeOfCar, int manufacturingYear) {
+    public Car(String brand, String model, int yearOfProduction) {
         int defYear = LocalDate.now().getYear();
 
-        if (brandOfCar == null || brandOfCar.trim().length() < 1 || manufacturingYear > defYear){
-            throw new IllegalArgumentException("");
+        if (brand == null || brand.trim().length() < 1){
+            throw new IllegalArgumentException("Brand name cannot be empty!");
         }
 
-        this.brandOfCar = brandOfCar;
-        this.typeOfCar = typeOfCar;
-        this.manufacturingYear = manufacturingYear;
+        if (yearOfProduction > defYear) {
+            throw new IllegalArgumentException("Year of production cannot be in the future!");
+        }
+        this.brand = brand;
+        this.model = model;
+        this.yearOfProduction = yearOfProduction;
     }
 
-    public String getBrandOfCar() {
-        return brandOfCar;
+    public String getBrand() {
+        return brand;
     }
 
-    public String getTypeOfCar() {
-        return typeOfCar;
+    public String getModel() {
+        return model;
     }
 
-    public int getManufacturingYear() {
-        return manufacturingYear;
+    public int getYearOfProduction() {
+        return yearOfProduction;
     }
 }
