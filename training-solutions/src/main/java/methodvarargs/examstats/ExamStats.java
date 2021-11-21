@@ -1,4 +1,4 @@
-package methodvarargs;
+package methodvarargs.examstats;
 
 public class ExamStats {
     private int maxPoints;
