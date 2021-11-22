@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class BankTransactionTest {
-
+/*
     @Test
     public void testOneTransaction() {
         //Given
@@ -44,5 +44,5 @@ public class BankTransactionTest {
         assertEquals(0L, BankTransaction.getCurrentMinValue());
         assertEquals(0L, BankTransaction.getCurrentMaxValue());
         assertEquals(new BigDecimal("0"), BankTransaction.getSumOfTrxs());
-    }
+    }*/
 }
