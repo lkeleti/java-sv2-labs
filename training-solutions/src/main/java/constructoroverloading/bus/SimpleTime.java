@@ -1,4 +1,4 @@
-package constructoroverloading;
+package constructoroverloading.bus;
 
 public class SimpleTime {
     private int hours;
@@ -26,7 +26,7 @@ public class SimpleTime {
         return minutes;
     }
 
-    public int difference(SimpleTime time) {
+    public int getDifference(SimpleTime time) {
         return (hours-time.getHours()) *60 + minutes-time.getMinutes();
     }
 
