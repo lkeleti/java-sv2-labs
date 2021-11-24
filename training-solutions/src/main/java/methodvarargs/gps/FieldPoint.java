@@ -32,7 +32,7 @@ public class FieldPoint {
 
     public void setTimeOfLogging(LocalDateTime timeOfLogging) {
         if (timeOfLogging == null) {
-            throw new IllegalArgumentException("The time of logging parameter cannot be null!");
+            throw new IllegalArgumentException("Time of logging must not be null!");
         }
         this.timeOfLogging = timeOfLogging;
     }

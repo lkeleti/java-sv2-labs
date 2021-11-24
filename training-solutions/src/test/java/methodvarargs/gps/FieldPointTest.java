@@ -1,6 +1,5 @@
 package methodvarargs.gps;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
@@ -8,44 +7,15 @@ import java.time.LocalDateTime;
 import static org.junit.jupiter.api.Assertions.*;
 
 class FieldPointTest {
-    FieldPoint fieldPoint;
-    LocalDateTime timeOfSetting;
-    LocalDateTime timeOfLogging;
-
-    @BeforeEach
-    void init() {
-        timeOfSetting = LocalDateTime.now();
-        fieldPoint = new FieldPoint(timeOfSetting,47.573997704, 47.573997704);
-    }
 
     @Test
-    void getTimeOfSetting() {
-        assertEquals( timeOfSetting, fieldPoint.getTimeOfSetting());
-    }
+    void testCreate() {
+        FieldPoint fieldPoint = new FieldPoint(LocalDateTime.of(2021, 11, 4, 8, 12),
+                47.205902, 17.555667);
 
-    @Test
-    void getTimeOfLoggingNull() {
-        IllegalArgumentException iae =
-                assertThrows(IllegalArgumentException.class,
-                        () -> fieldPoint.setTimeOfLogging(null)
-                        );
-        assertEquals("The time of logging parameter cannot be null!", iae.getMessage());
-    }
-
-    @Test
-    void getTimeOfLogging() {
-        timeOfLogging = LocalDateTime.now();
-        fieldPoint.setTimeOfLogging(timeOfLogging);
-        assertEquals(timeOfLogging, fieldPoint.getTimeOfLogging());
-    }
-
-    @Test
-    void getLatitude() {
-        assertEquals(47.573997704, fieldPoint.getLatitude());
-    }
-
-    @Test
-    void getLongitude() {
-        assertEquals(47.573997704, fieldPoint.getLongitude());
+        assertEquals(LocalDateTime.of(2021, 11, 4, 8, 12), fieldPoint.getTimeOfSetting());
+        assertNull(fieldPoint.getTimeOfLogging());
+        assertEquals(47.205902, fieldPoint.getLatitude());
+        assertEquals(17.555667, fieldPoint.getLongitude());
     }
 }
