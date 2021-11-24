@@ -1,4 +1,4 @@
-package methodpass;
+package methodpass.window;
 
 public class Window {
     private String roomName;

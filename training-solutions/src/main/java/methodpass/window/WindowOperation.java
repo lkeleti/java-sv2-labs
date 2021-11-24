@@ -1,4 +1,4 @@
-package methodpass;
+package methodpass.window;
 
 import java.util.List;
 

@@ -21,7 +21,7 @@ public class Trooper {
 
     public void changePosition(Position target) {
         if (target == null) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("The new position must not be null");
         }
         position = target;
     }

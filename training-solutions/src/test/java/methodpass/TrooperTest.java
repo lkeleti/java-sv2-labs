@@ -1,13 +1,17 @@
-package methodpass.troopers;
+package troopers;
 
+
+import methodpass.troopers.Position;
+import methodpass.troopers.Trooper;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class TrooperTest {
+public class TrooperTest {
+
 
     @Test
-    void testCreate() {
+    public void testCreate() {
         Trooper trooper = new Trooper("Jake Doe");
 
         assertEquals("Jake Doe", trooper.getName());
@@ -16,13 +20,15 @@ class TrooperTest {
     }
 
     @Test
-    void testCreateWithEmptyName() {
-        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () -> new Trooper(""));
+    public void testCreateWithEmptyName() {
+
+        Exception ex = assertThrows(IllegalArgumentException.class, () -> new Trooper(""));
         assertEquals("Name must not be empty.", ex.getMessage());
+
     }
 
     @Test
-    void testChangePosition() {
+    public void testChangePosition() {
         Trooper trooper = new Trooper("John Doe");
         Position target = new Position(3, 4);
         trooper.changePosition(target);
@@ -32,15 +38,14 @@ class TrooperTest {
     }
 
     @Test
-    void testChangePositionToNowhere() {
+    public void testChangePositionToNowhere() {
         Trooper trooper = new Trooper("John Doe");
-        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () -> trooper.changePosition(null));
+        Exception ex = assertThrows(IllegalArgumentException.class, () -> trooper.changePosition(null));
 
-        assertEquals("The new position must not be null", ex.getMessage());
     }
 
     @Test
-    void testDistanceFrom() {
+    public void testDistanceFrom() {
         Trooper trooper = new Trooper("John Doe");
         Position target = new Position(3, 4);
 
