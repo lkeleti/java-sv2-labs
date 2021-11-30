@@ -27,5 +27,24 @@ public class Godor {
 
         System.out.println("5. feladat");
         System.out.printf("A gödrök száma: %d%n", deepsNumber);
+
+        System.out.println("6. feladat");
+        System.out.println("a)");
+        GodorStartEnd godorStartEnd = godorController.queryGodorStartEnd(distance);
+        if (godorStartEnd.getStart() == -1) {
+            System.out.println("Az adott helyen nincs gödör.");
+        }
+        else {
+            System.out.printf("A gödör kezdete: %d méter, a gödör vége: %d méter.%n", godorStartEnd.getStart(), godorStartEnd.getEnd());
+        }
+
+        System.out.println("c)");
+        System.out.printf("A legnagyobb mélysége %d méter.%n", godorController.findDeepestPoint(godorStartEnd.getStart(), godorStartEnd.getEnd()));
+
+        System.out.println("d)");
+        System.out.printf("A térfogata %d m^3.%n", godorController.calculateVolume(godorStartEnd.getStart(), godorStartEnd.getEnd()));
+
+        System.out.println("e)");
+        System.out.printf("A vízmennyiség %d m^3.%n", godorController.calculateWaterVolume(godorStartEnd.getStart(), godorStartEnd.getEnd()));
     }
 }

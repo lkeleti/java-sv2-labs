@@ -70,4 +70,62 @@ public class GodorController {
         }
         return lines;
     }
+
+    public GodorStartEnd queryGodorStartEnd(int position) {
+        GodorStartEnd godorStartEnd = new GodorStartEnd();
+        if (melysegek.get(position) == 0) {
+            godorStartEnd.setStart(-1);
+            godorStartEnd.setEnd(-1);
+            return godorStartEnd;
+        }
+        godorStartEnd.setStart(findStart(position));
+        godorStartEnd.setEnd(findEnd(position));
+        return godorStartEnd;
+    }
+
+    private int findStart(int position) {
+        for(int i = position; i > 0; i--){
+            if (melysegek.get(i) > 0 && melysegek.get(i-1) == 0){
+                return i+1;
+            }
+        }
+        return 0;
+    }
+
+    private int findEnd(int position) {
+        for(int i = position; i < melysegek.size()-1; i++){
+            if (melysegek.get(i) > 0 && melysegek.get(i+1) == 0){
+                return i+1;
+            }
+        }
+        return melysegek.size();
+    }
+
+    public int findDeepestPoint(int start, int end) {
+        int deepest = 0;
+        for (int i = start; i <= end; i++) {
+            if (melysegek.get(i) > deepest) {
+                deepest = melysegek.get(i);
+            }
+        }
+        return deepest;
+    }
+
+    public int calculateVolume(int start, int end) {
+        int volume = 0;
+        for (int i = start-1; i < end; i++) {
+            volume += (melysegek.get(i) * 10);
+        }
+        return volume;
+    }
+
+    public int calculateWaterVolume(int start, int end) {
+        int volume = 0;
+        for (int i = start-1; i < end; i++) {
+            if (melysegek.get(i) > 1) {
+                volume += ((melysegek.get(i)-1) * 10);
+            }
+        }
+        return volume;
+    }
 }
