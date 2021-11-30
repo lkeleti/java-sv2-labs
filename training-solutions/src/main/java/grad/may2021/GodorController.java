@@ -56,16 +56,17 @@ public class GodorController {
 
     private List<String> deepsToList() {
         List<String> lines = new ArrayList<>();
-        String line = "";
+        StringBuilder line = new StringBuilder();
         for (Integer melyseg: melysegek) {
             if (melyseg == 0){
                 if (!line.isEmpty()) {
-                    lines.add(line);
-                    line = "";
+                    lines.add(line.toString());
+                    line.setLength(0);
                 }
             }
             else {
-                line += melyseg + " ";
+                line.append(melyseg);
+                line.append(" ");
             }
         }
         return lines;
@@ -127,5 +128,30 @@ public class GodorController {
             }
         }
         return volume;
+    }
+
+    public boolean monotonicallyDeepens(int start, int end) {
+        int deepest = findDeepestPoint(start, end);
+        int deepestPointPosition = findDeepestPointPosition(start, end, deepest);
+        for (int i = start-1; i < deepestPointPosition-1; i++) {
+            if (melysegek.get(i) > melysegek.get(i-1) ) {
+                return false;
+            }
+        }
+
+        for (int i = deepestPointPosition; i < end-1; i++) {
+            if (melysegek.get(i) < melysegek.get(i-1) ) {
+                return false;
+            }
+        }
+        return true;
+    }
+    public int findDeepestPointPosition(int start, int end, int deepest) {
+        for (int i = start-1; i < end; i++) {
+            if (melysegek.get(i) == deepest) {
+                return i;
+            }
+        }
+        return -1;
     }
 }
