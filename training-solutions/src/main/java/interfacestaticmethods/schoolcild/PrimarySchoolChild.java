@@ -2,7 +2,7 @@ package interfacestaticmethods.schoolcild;
 
 public interface PrimarySchoolChild {
 
-    public static PrimarySchoolChild of(int age) {
+    static PrimarySchoolChild of(int age) {
         if (age >= 6 && age <= 10){
             return new LowerClassSchoolChild();
         } else if (age >=11 && age <= 14){

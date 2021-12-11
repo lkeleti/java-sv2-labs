@@ -1,7 +1,7 @@
 package interfacestaticmethods.vehicle;
 
 public interface Vehicle {
-    public static Vehicle of(int numberOfWheels){
+    static Vehicle of(int numberOfWheels){
         if (numberOfWheels == 2) {
             return new Bicycle(2);
         }
