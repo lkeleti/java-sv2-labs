@@ -12,7 +12,7 @@ public class Measurement {
             return(Files.readAllLines(path));
         }
         catch (IOException ioe) {
-            throw new IllegalStateException("Can't read file!");
+            throw new IllegalStateException("Can not read file.");
         }
     }
 
@@ -21,9 +21,9 @@ public class Measurement {
         for (String line: lines) {
             String[] lineArray = line.split(",");
             if (lineArray.length != 3 ||
-                    checkInteger(lineArray[0]) ||
-                    checkInteger(lineArray[1]) ||
-                    checkName(lineArray[2])) {
+                    !checkInteger(lineArray[0]) ||
+                    !checkDouble(lineArray[1]) ||
+                    !checkName(lineArray[2])) {
                 result.add(line);
             }
         }
@@ -40,6 +40,18 @@ public class Measurement {
         }
         try {
             Integer.parseInt(s);
+        }
+        catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
+    }
+    private boolean checkDouble(String s) {
+        if (s == null || s.isEmpty()) {
+            return false;
+        }
+        try {
+            Double.parseDouble(s);
         }
         catch (NumberFormatException nfe) {
             return false;
