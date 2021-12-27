@@ -1,6 +1,6 @@
 package schoolrecords;
 
-public class Mark {
+public class    Mark {
     private MarkType markType;
     private Subject subject;
     private Tutor tutor;

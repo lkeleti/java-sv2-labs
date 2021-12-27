@@ -21,9 +21,9 @@ public class Student {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        if (marks == null || marks.isEmpty()) {
-            return name + " marks: ";
-        } else {
+        sb.append(name);
+        sb.append(" marks: ");
+        if (!(marks == null || marks.isEmpty())) {
             for (Mark mark : marks) {
                 sb.append(mark.getSubject().getSubjectName());
                 sb.append(": ");
@@ -31,8 +31,8 @@ public class Student {
                 sb.append(", ");
             }
             sb.setLength(sb.length() - 2);
-            return name + " marks: " + sb.toString();
         }
+        return sb.toString();
     }
 
     public void grading(Mark mark) {
