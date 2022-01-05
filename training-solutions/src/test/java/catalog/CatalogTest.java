@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class CatalogTest {
 
 
-/*    public CatalogItem catalogItem1 = new CatalogItem("R-1", 300,
+    public CatalogItem catalogItem1 = new CatalogItem("R-1", 300,
             new AudioFeatures("Night Visions", 185, Arrays.asList("Dan Raynolds"), Arrays.asList("Imagine Dragons")),
             new PrintedFeatures("Harry Potter", 600, Arrays.asList("J.K. Rowling")),
             new AudioFeatures("Piece of Mind", 200, Arrays.asList("Steve Harris"), Arrays.asList("Iron Maiden"))
@@ -83,7 +83,7 @@ public class CatalogTest {
         assertEquals(485, catalog.getFullLength());
     }
 
-    @Test
+/*    @Test
     public void testAveragePageWithIllegalArgument() {
         catalog.addItem(catalogItem1);
         catalog.addItem(catalogItem2);
