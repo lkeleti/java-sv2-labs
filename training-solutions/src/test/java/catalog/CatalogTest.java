@@ -5,9 +5,9 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-//import static catalog.SearchCriteria.createByBoth;
-//import static catalog.SearchCriteria.createByContributor;
-//import static catalog.SearchCriteria.createByTitle;
+import static catalog.SearchCriteria.createByBoth;
+import static catalog.SearchCriteria.createByContributor;
+import static catalog.SearchCriteria.createByTitle;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -83,7 +83,7 @@ public class CatalogTest {
         assertEquals(485, catalog.getFullLength());
     }
 
-/*    @Test
+    @Test
     public void testAveragePageWithIllegalArgument() {
         catalog.addItem(catalogItem1);
         catalog.addItem(catalogItem2);
@@ -156,5 +156,5 @@ public class CatalogTest {
         assertEquals(1, catalog.findByCriteria(searchCriteria).size());
 
     }
-*/
+
 }

@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class SearchCriteriaTest {
 
-    /*@Test
+    @Test
     public void testCreateByTitle() {
         SearchCriteria searchCriteria = SearchCriteria.createByTitle("Imagine Dragons");
         assertEquals("Imagine Dragons", searchCriteria.getTitle());
@@ -52,5 +52,5 @@ public class SearchCriteriaTest {
         assertThrows(IllegalArgumentException.class, () -> {
             SearchCriteria.createByBoth(null, "Metallica");
         });
-    }*/
+    }
 }

@@ -30,16 +30,6 @@ public class Catalog {
         return result;
     }
 
-    private int collectAudioFeatures(List<Feature> features) {
-        int sum = 0;
-        for (Feature feature:features){
-            if (feature instanceof AudioFeatures){
-                sum += ((AudioFeatures) feature).getLength();
-            }
-        }
-        return sum;
-    }
-
     public List<CatalogItem> getPrintedLibraryItems() {
         List<CatalogItem> result = new ArrayList<>();
         for (CatalogItem catalogItem:catalogItems){
@@ -50,21 +40,11 @@ public class Catalog {
         return result;
     }
 
-    private int collectPrintedFeatures(List<Feature> features) {
-        int sum = 0;
-        for (Feature feature:features){
-            if (feature instanceof PrintedFeatures){
-                sum += ((PrintedFeatures) feature).getNumberOfPages();
-            }
-        }
-        return sum;
-    }
-
     public int getAllPageNumber() {
         int sum = 0;
         for (CatalogItem catalogItem:catalogItems){
             if (catalogItem.hasPrintedFeature()){
-                sum += collectPrintedFeatures(catalogItem.getFeatures());
+                sum += catalogItem.numberOfPagesAtOneItem();
             }
         }
         return sum;
@@ -74,9 +54,29 @@ public class Catalog {
         int sum = 0;
         for (CatalogItem catalogItem:catalogItems){
             if (catalogItem.hasAudioFeature()){
-                sum += collectAudioFeatures(catalogItem.getFeatures());
+                sum += catalogItem.fullLengthAtOneItem();
             }
         }
         return sum;
+    }
+
+    public double averagePageNumberOver(int over){
+        if (over <= 0) {
+            throw new IllegalArgumentException("Page number must be positive");
+        }
+        //ToDo
+        return 0.0;
+    }
+
+    public List<CatalogItem> findByCriteria(SearchCriteria searchCriteria) {
+        List<CatalogItem> result = new ArrayList<>();
+        for (CatalogItem catalogItem: catalogItems) {
+            if ((!searchCriteria.hasTitle() || catalogItem.getTitles().contains(searchCriteria.getTitle())) &&
+                    (!searchCriteria.hasContributor() || catalogItem.getContributors().contains(searchCriteria.getContributor()))
+            ) {
+                result.add(catalogItem);
+            }
+        }
+        return result;
     }
 }
