@@ -12,7 +12,7 @@ public class Catalog {
 
     public void deleteItemByRegistrationNumber(String registrationNumber) {
         List<CatalogItem> toDelete = new ArrayList<>();
-        for (CatalogItem catalogItem: catalogItems) {
+        for (CatalogItem catalogItem : catalogItems) {
             if (catalogItem.getRegistrationNumber().equals(registrationNumber)) {
                 toDelete.add(catalogItem);
             }
@@ -22,8 +22,8 @@ public class Catalog {
 
     public List<CatalogItem> getAudioLibraryItems() {
         List<CatalogItem> result = new ArrayList<>();
-        for (CatalogItem catalogItem:catalogItems){
-            if (catalogItem.hasAudioFeature()){
+        for (CatalogItem catalogItem : catalogItems) {
+            if (catalogItem.hasAudioFeature()) {
                 result.add(catalogItem);
             }
         }
@@ -32,8 +32,8 @@ public class Catalog {
 
     public List<CatalogItem> getPrintedLibraryItems() {
         List<CatalogItem> result = new ArrayList<>();
-        for (CatalogItem catalogItem:catalogItems){
-            if (catalogItem.hasPrintedFeature()){
+        for (CatalogItem catalogItem : catalogItems) {
+            if (catalogItem.hasPrintedFeature()) {
                 result.add(catalogItem);
             }
         }
@@ -42,8 +42,8 @@ public class Catalog {
 
     public int getAllPageNumber() {
         int sum = 0;
-        for (CatalogItem catalogItem:catalogItems){
-            if (catalogItem.hasPrintedFeature()){
+        for (CatalogItem catalogItem : catalogItems) {
+            if (catalogItem.hasPrintedFeature()) {
                 sum += catalogItem.numberOfPagesAtOneItem();
             }
         }
@@ -52,25 +52,35 @@ public class Catalog {
 
     public int getFullLength() {
         int sum = 0;
-        for (CatalogItem catalogItem:catalogItems){
-            if (catalogItem.hasAudioFeature()){
+        for (CatalogItem catalogItem : catalogItems) {
+            if (catalogItem.hasAudioFeature()) {
                 sum += catalogItem.fullLengthAtOneItem();
             }
         }
         return sum;
     }
 
-    public double averagePageNumberOver(int over){
-        if (over <= 0) {
+    public double averagePageNumberOver(int moreThan) {
+        if (moreThan <= 0) {
             throw new IllegalArgumentException("Page number must be positive");
         }
-        //ToDo
-        return 0.0;
+        int pages = 0;
+        double counter = 0;
+        for (CatalogItem catalogItem : catalogItems) {
+            if (catalogItem.hasPrintedFeature() && catalogItem.numberOfPagesAtOneItem() > moreThan) {
+                pages += catalogItem.numberOfPagesAtOneItem();
+                counter++;
+            }
+        }
+        if (pages == 0) {
+            throw new IllegalArgumentException("No page");
+        }
+        return pages / counter;
     }
 
     public List<CatalogItem> findByCriteria(SearchCriteria searchCriteria) {
         List<CatalogItem> result = new ArrayList<>();
-        for (CatalogItem catalogItem: catalogItems) {
+        for (CatalogItem catalogItem : catalogItems) {
             if ((!searchCriteria.hasTitle() || catalogItem.getTitles().contains(searchCriteria.getTitle())) &&
                     (!searchCriteria.hasContributor() || catalogItem.getContributors().contains(searchCriteria.getContributor()))
             ) {
