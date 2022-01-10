@@ -1,7 +1,5 @@
 package collectionscomp;
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.Objects;
 import java.util.TreeSet;
 
