@@ -4,33 +4,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Championship {
+    private List<TeamStatistics> leagueTable = new ArrayList<>();
 
-    private List<TeamStatistics> leagueTable;
-
-    public Championship() {
-        this.leagueTable = new ArrayList<>();
+    public List<TeamStatistics> getLeagueTable() {
+        return leagueTable;
     }
 
     public void addGame(GameResult result) {
-        TeamStatistics home = getTeam(result.teamHome);
-        TeamStatistics quest = getTeam(result.teamGuest);
-        home.played(result.goalHome, result.goalGuest);
-        quest.played(result.goalGuest, result.goalHome);
-    }
-
-    public List<TeamStatistics> getLeagueTable() {
-        return this.leagueTable;
-    }
-
-    private TeamStatistics getTeam(String teamName) {
-        TeamStatistics teamStatistics = new TeamStatistics(teamName);
-        int index = leagueTable.indexOf(teamStatistics);
-        if (index == -1) {
-            leagueTable.add(teamStatistics);
-            return teamStatistics;
+        boolean isHomeExist = false;
+        boolean isGuestExist = false;
+        for (TeamStatistics teamStatistics : leagueTable) {
+            if (result.teamHome.equals(teamStatistics.getTeamName())) {
+                teamStatistics.played(result.goalHome, result.goalGuest);
+                isHomeExist = true;
+            }
+            if (result.teamGuest.equals(teamStatistics.getTeamName())) {
+                teamStatistics.played(result.goalGuest, result.goalHome);
+                isGuestExist = true;
+            }
         }
-
-        return leagueTable.get(index);
+        if (!isHomeExist) {
+            TeamStatistics teamStatistics = new TeamStatistics(result.teamHome);
+            teamStatistics.played(result.goalHome, result.goalGuest);
+            leagueTable.add(teamStatistics);
+        }
+        if (!isGuestExist) {
+            TeamStatistics teamStatistics = new TeamStatistics(result.teamGuest);
+            teamStatistics.played(result.goalGuest, result.goalHome);
+            leagueTable.add(teamStatistics);
+        }
     }
 
     public static class GameResult {
