@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class LostAndFoundOfficeTest {
 
-    /*LostAndFoundOffice office;
+    LostAndFoundOffice office;
 
     @BeforeEach
     void init() {
@@ -36,5 +36,5 @@ class LostAndFoundOfficeTest {
         Exception ex = assertThrows(IllegalArgumentException.class,
                 () -> office.findLostProperty(new LostProperty("xyz", LocalDate.of(2021, 6, 29))));
         assertEquals("Property not found.", ex.getMessage());
-    }*/
+    }
 }
