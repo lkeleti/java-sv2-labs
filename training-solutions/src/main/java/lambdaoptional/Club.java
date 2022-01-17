@@ -25,7 +25,7 @@ public class Club {
                 return Optional.of(member);
             }
         }
-        throw new IllegalArgumentException("Cannot find flat applied to the condition.");
+        return Optional.empty();
     }
 
     public Optional<Double> averageNumberOfSkills() {
