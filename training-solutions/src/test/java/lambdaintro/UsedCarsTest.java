@@ -3,40 +3,48 @@ package lambdaintro;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class UsedCarsTest {
+
     UsedCars usedCars;
 
     @BeforeEach
-    void setUp() {
-        usedCars = new UsedCars(
-                new ArrayList(Arrays.asList(
-                        new Car("Lada", "Niva", 100_000,2.0),
-                        new Car("Lada", "Samara", 90_000,1.8),
-                        new Car("Suzuki", "Swift", 300_000,2.0),
-                        new Car("Suzuki", "Vitara", 100_000,2.1),
-                        new Car("Suzuki", "SX4", 400_000,2.5),
-                        new Car("Suzuki", "Ignis", 100_000,1.5)
-                ))
+    void init() {
+        List<Car> cars = Arrays.asList(
+                new Car("Ford", "S-Max", 2_400_000, 5.11),
+                new Car("Opel", "Astra", 2_100_000, 4.33),
+                new Car("Fiat", "Scudo", 3_000_000, 5.27),
+                new Car("Opel", "Zafira", 2_500_000, 5.10),
+                new Car("Fiat", "Punto", 1_500_000, 3.56)
         );
+        usedCars = new UsedCars(cars);
     }
 
     @Test
-    void listCarsByPrice() {
-        assertEquals(90000, usedCars.listCarsByPrice().get(0).getPrice());
+    void testListCarsByPrice() {
+        List<Car> expected = usedCars.listCarsByPrice();
+
+        assertEquals("Fiat", expected.get(0).getBrand());
+        assertEquals(3_000_000, expected.get(4).getPrice());
     }
 
     @Test
-    void listCarsByLengthDesc() {
-        assertEquals(2.5, usedCars.listCarsByLengthDesc().get(0).getLength());
+    void testListCarsByLengthDesc() {
+        List<Car> expected = usedCars.listCarsByLengthDesc();
+
+        assertEquals("Ford", expected.get(1).getBrand());
+        assertEquals(4.33, expected.get(3).getLength());
     }
 
     @Test
-    void listCarsOneBrandByType() {
-        assertEquals("Ignis", usedCars.listCarsOneBrandByType("Suzuki").get(0).getTypeOfCar());
+    void testListCarsOneBrandByType() {
+        List<Car> expected = usedCars.listCarsOneBrandByType("Fiat");
+
+        assertEquals(2, expected.size());
+        assertEquals("Scudo", expected.get(1).getType());
     }
 }

@@ -21,7 +21,7 @@ public class RealEstateAgency {
                 return flat;
             }
         }
-        throw new IllegalArgumentException("Cannot find flat applied to the condition: " + condition);
+        throw new IllegalArgumentException("No such flat.");
     }
 
     public Flat findFirstCheaperFlat(int minPrice) {
@@ -37,7 +37,7 @@ public class RealEstateAgency {
     }
     public Flat findFirstFlatInSameTown(String town) {
         return findFirst(
-                flat -> flat.getAddress().equals(town)
+                flat -> flat.getAddress().contains(town)
         );
     }
 }

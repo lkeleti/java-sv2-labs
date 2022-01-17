@@ -3,40 +3,60 @@ package lambdaintro;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class RealEstateAgencyTest {
-    RealEstateAgency realEstateAgency;
+
+    RealEstateAgency agency;
 
     @BeforeEach
-    void setUp() {
-        realEstateAgency = new RealEstateAgency(
-                new ArrayList(Arrays.asList(
-                        new Flat("Budapest",50,10_000_000),
-                        new Flat("Szolnok",50,8_000_000),
-                        new Flat("Budapest",60,20_000_000),
-                        new Flat("Budapest",70,30_000_000),
-                        new Flat("Budapest",80,40_000_000),
-                        new Flat("Budapest",90,50_000_000)
-                ))
+    void init() {
+        List<Flat> flats = Arrays.asList(
+                new Flat("Budapest, Fő utca 3.", 35.6, 45_000_000),
+                new Flat("Győr, Baross utca 4.", 17.3, 19_000_000),
+                new Flat("Szeged, Kossuth utca 2.", 46.8, 23_000_000),
+                new Flat("Győr, Rákóczi utca 7.", 67.3, 67_000_000),
+                new Flat("Debrecen, Petőfi utca 9.", 59.2, 36_000_000)
         );
+        agency = new RealEstateAgency(flats);
     }
 
     @Test
-    void findFirstCheaperFlat() {
-        assertEquals(10_000_000, realEstateAgency.findFirstCheaperFlat(20_000_000).getPrice());
+    void testFindFirstCheaperFlat() {
+        assertEquals(19_000_000, agency.findFirstCheaperFlat(40_000_000).getPrice());
     }
 
     @Test
-    void findFirstGreaterFlat() {
-        assertEquals(70, realEstateAgency.findFirstGreaterFlat(60).getArea());
+    void testFindFirstCheaperFlatNotFound() {
+        Exception ex = assertThrows(IllegalArgumentException.class,
+                () -> agency.findFirstCheaperFlat(1));
+        assertEquals("No such flat.", ex.getMessage());
     }
 
     @Test
-    void findFirstFlatInSameTown() {
-        assertEquals(10_000_000, realEstateAgency.findFirstFlatInSameTown("Budapest").getPrice());
+    void testFindFirstGreaterFlat() {
+        assertEquals(46.8, agency.findFirstGreaterFlat(38.2).getArea());
+    }
+
+    @Test
+    void testFindFirstGreaterFlatNotFound() {
+        Exception ex = assertThrows(IllegalArgumentException.class,
+                () -> agency.findFirstGreaterFlat(100.0));
+        assertEquals("No such flat.", ex.getMessage());
+    }
+
+    @Test
+    void testFindFirstFlatInSameTown() {
+        assertEquals("Győr, Baross utca 4.", agency.findFirstFlatInSameTown("Győr").getAddress());
+    }
+
+    @Test
+    void testFindFirstFlatInSameTownNotFound() {
+        Exception ex = assertThrows(IllegalArgumentException.class,
+                () -> agency.findFirstFlatInSameTown("Szolnok"));
+        assertEquals("No such flat.", ex.getMessage());
     }
 }

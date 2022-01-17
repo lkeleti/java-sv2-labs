@@ -17,7 +17,7 @@ public class Car {
         return brand;
     }
 
-    public String getTypeOfCar() {
+    public String getType() {
         return typeOfCar;
     }
 

@@ -30,14 +30,14 @@ public class UsedCars {
         return result;
     }
     public List<Car> listCarsOneBrandByType(String brand) {
-        List<Car> result = new ArrayList<>(cars);
+        List<Car> result = new ArrayList<>();
         for (Car car: cars) {
             if (car.getBrand().equals(brand)) {
                 result.add(car);
             }
         }
         result.sort(
-                Comparator.comparing(Car::getTypeOfCar)
+                Comparator.comparing(Car::getType)
         );
         return result;
     }

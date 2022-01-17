@@ -2,10 +2,10 @@ package lambdaintro;
 
 public class Flat {
     private String address;
-    private int area;
+    private double area;
     private int price;
 
-    public Flat(String address, int area, int price) {
+    public Flat(String address, double area, int price) {
         this.address = address;
         this.area = area;
         this.price = price;
@@ -15,7 +15,7 @@ public class Flat {
         return address;
     }
 
-    public int getArea() {
+    public double getArea() {
         return area;
     }
 
