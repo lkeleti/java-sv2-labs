@@ -14,7 +14,7 @@ Ezen a héten a lambda kifejezések és a streamek használatával fogtok részl
 * [x] [Bevezetés a streamek használatába - gyakorlat - források videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/31316404-bevezetes-a-streamek-hasznalataba-gyakorlat-forrasok)
 * [x] [Bevezetés a streamek használatába - gyakorlat - közbülső és lezáró műveletek videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/31319324-bevezetes-a-streamek-hasznalataba-gyakorlat-kozbulso-es-lezaro-muveletek)
 * [x] [Programozási tételek streamek használatával - gyakorlati feladatok](https://e-learning.training360.com/courses/take/java-se-halado-koll/texts/31337872-programozasi-tetelek-streamek-hasznalataval-gyakorlati-feladatok)
-* [ ] [Programozási tételek streamek használatával - megoldás videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/31319389-programozasi-tetelek-streamek-hasznalataval-megoldas)
+* [x] [Programozási tételek streamek használatával - megoldás videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/31319389-programozasi-tetelek-streamek-hasznalataval-megoldas)
 
 ## Lambda kifejezések és streamek - nem kötelező, de nagyon ajánlott
 
@@ -43,7 +43,7 @@ mindenképpen végezze el ezeket a leckéket is.
 * [x] 2022-01-17 konzultáció gyakorlati feladat
 * [x] 2022-01-18 konzultáció részvétel/videó
 * [x] 2022-01-18 konzultáció gyakorlati feladat
-* [ ] 2022-01-20 konzultáció részvétel/videó
-* [ ] 2022-01-20 konzultáció gyakorlati feladat
-* [ ] 2022-01-21 konzultáció részvétel/videó
-* [ ] 2022-01-21 konzultáció gyakorlati feladat
+* [x] 2022-01-20 konzultáció részvétel/videó
+* [x] 2022-01-20 konzultáció gyakorlati feladat
+* [x] 2022-01-21 konzultáció részvétel/videó
+* [x] 2022-01-21 konzultáció gyakorlati feladat
