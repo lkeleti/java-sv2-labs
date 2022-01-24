@@ -23,7 +23,7 @@ Akinek a bevezető leckék után hiányérzete maradt vagy szeretne tovább tanu
 mindenképpen végezze el ezeket a leckéket is.
 
 * [x] [Lambda kifejezések videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16981999-lambda-kifejezesek)
-* [ ] Lambda kifejezések gyakorlati feladat
+* [x] Lambda kifejezések gyakorlati feladat
 * [x] [Az Optional osztály használata videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16982013-az-optional-osztaly-hasznalata)
 * [ ] Az Optional osztály használata gyakorlati feladat
 * [x] [Comparator módosítások videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16982014-comparator-modositasok)
