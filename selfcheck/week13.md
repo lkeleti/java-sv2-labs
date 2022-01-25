@@ -27,9 +27,9 @@ mindenképpen végezze el ezeket a leckéket is.
 * [x] [Az Optional osztály használata videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16982013-az-optional-osztaly-hasznalata)
 * [x] Az Optional osztály használata gyakorlati feladat
 * [x] [Comparator módosítások videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16982014-comparator-modositasok)
-* [ ] Comparator módosítások gyakorlati feladat
+* [x] Comparator módosítások gyakorlati feladat
 * [x] [Streamek videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16982034-streamek)
-* [ ] Streamek gyakorlati feladat
+* [x] Streamek gyakorlati feladat
 * [x] [Közbenső műveletek videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16982041-kozbenso-muveletek)
 * [ ] Közbenső műveletek gyakorlati feladat
 * [x] [Primitívek használata streamekben videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16982044-primitivek-hasznalata-streamekben)
