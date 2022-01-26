@@ -2,6 +2,7 @@ package lambdaprimitives;
 
 import java.util.ArrayList;
 import java.util.DoubleSummaryStatistics;
+import java.util.IntSummaryStatistics;
 import java.util.List;
 
 public class SportGadgetStore {
@@ -16,8 +17,10 @@ public class SportGadgetStore {
     }
 
     public int getNumberOfProducts() {
-        return (int)(products.stream()
-                .count());
+        return (int) (products.stream()
+                .mapToInt(Product::getPieces)
+                .sum()
+        );
     }
 
     public double getAveragePrice() {
@@ -28,10 +31,14 @@ public class SportGadgetStore {
     }
 
     public String getExpensiveProductStatistics(double minPrice) {
-        DoubleSummaryStatistics result = products.stream()
-                .filter(p->p.getPrice() > minPrice)
-                .mapToDouble(Product::getPrice)
+        IntSummaryStatistics result = products.stream()
+                .filter(p -> p.getPrice() > minPrice)
+                .mapToInt(Product::getPieces)
                 .summaryStatistics();
-        return String.format("Összesen %d féle termék, amelyekből minimum %d db, maximum %d db, összesen %d db van.", 1,2,3,4);
+        if (result.getCount() == 0) {
+            return "Nincs ilyen termék.";
+        } else {
+            return String.format("Összesen %d féle termék, amelyekből minimum %d db, maximum %d db, összesen %d db van.", result.getCount(), result.getMin(), result.getMax(), result.getSum());
+        }
     }
 }

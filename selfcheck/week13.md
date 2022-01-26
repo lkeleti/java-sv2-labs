@@ -33,7 +33,7 @@ mindenképpen végezze el ezeket a leckéket is.
 * [x] [Közbenső műveletek videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16982041-kozbenso-muveletek)
 * [x] Közbenső műveletek gyakorlati feladat
 * [x] [Primitívek használata streamekben videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16982044-primitivek-hasznalata-streamekben)
-* [ ] Primitívek használata streamekben gyakorlati feladat
+* [x] Primitívek használata streamekben gyakorlati feladat
 * [x] [Collectorok videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16982047-collectorok)
 * [ ] Collectorok gyakorlati feladat
 
