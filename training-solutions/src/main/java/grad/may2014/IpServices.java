@@ -51,7 +51,7 @@ public class IpServices {
     public void exercise5(Path path) {
         System.out.println("4. feladat:");
         List<String> datas = ipAddressesAll.stream()
-                .filter(this::isContainLeatEighteenZeros)
+                .filter(this::isContainLeastEighteenZeros)
                 .toList();
         try {
             Files.write(path, datas);
@@ -61,7 +61,7 @@ public class IpServices {
         }
     }
 
-    private boolean isContainLeatEighteenZeros(String ip) {
+    private boolean isContainLeastEighteenZeros(String ip) {
         return Stream.of(ip.split(""))
                 .filter(c->c.equals("0"))
                 .count() >= 18;
