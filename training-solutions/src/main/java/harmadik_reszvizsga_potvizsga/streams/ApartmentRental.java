@@ -1,6 +1,7 @@
 package harmadik_reszvizsga_potvizsga.streams;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ApartmentRental {
@@ -12,20 +13,20 @@ public class ApartmentRental {
 
     public List<Apartment> findApartmentByLocation(String location) {
         return apartments.stream()
-                .filter(a->a.getLocation().equals(location))
+                .filter(a -> a.getLocation().equals(location))
                 .toList();
     }
 
     public List<Apartment> findApartmentByExtras(String... extras) {
         return apartments.stream()
-                .filter(a->a.getExtras().contains(extras))
+                .filter(a -> a.getExtras().containsAll(Arrays.stream(extras).toList()))
                 .toList();
     }
 
 
     public boolean isThereApartmentWithBathroomType(BathRoomType bathRoomType) {
         return apartments.stream()
-                .anyMatch(a->a.getBathRoomType().equals(bathRoomType));
+                .anyMatch(a -> a.getBathRoomType().equals(bathRoomType));
     }
 
     public List<Integer> findApartmentsSize() {
