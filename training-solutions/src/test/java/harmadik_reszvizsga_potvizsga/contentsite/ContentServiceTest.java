@@ -91,7 +91,7 @@ class ContentServiceTest {
         assertEquals("Password is Invalid!", iae.getMessage());
     }
 
-    /*@Test
+    @Test
     void clickOnContentTest() {
         User user = contentService.getAllUsers().stream().filter(u -> u.getUserName().equals("jack")).findFirst().get();
 
@@ -126,5 +126,5 @@ class ContentServiceTest {
         IllegalStateException ise = assertThrows(IllegalStateException.class, () -> contentService.clickOnContent(user, content));
         assertEquals("Upgrade for Premium to watch this content!", ise.getMessage());
     }
-*/
+
 }

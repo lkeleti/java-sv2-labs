@@ -43,4 +43,23 @@ public class ContentService {
     public List<Content> getAllContent() {
         return new ArrayList<>(contents);
     }
+
+    public void clickOnContent(User user, Content content) {
+        if (user.isLogIn()) {
+            if (content.isPremiumContent()) {
+                if (user.isPremiumMember()) {
+                    content.click(user);
+                }
+                else {
+                    throw new IllegalStateException("Upgrade for Premium to watch this content!");
+                }
+            }
+            else {
+                content.click(user);
+            }
+        }
+        else {
+            throw  new IllegalStateException("Log in to watch this content!");
+        }
+    }
 }
