@@ -1,4 +1,4 @@
-package emailservice;
+package harmadik_reszvizsga_pot_potvizsga.emailservice;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class EmailServiceTest {
 
-    /*EmailService emailService;
+    EmailService emailService;
 
     @BeforeEach
     void init() {
@@ -66,5 +66,5 @@ class EmailServiceTest {
         for(User user : emailService.getUsers()){
             assertEquals(1,user.getIncoming().size());
         }
-    }*/
+    }
 }
