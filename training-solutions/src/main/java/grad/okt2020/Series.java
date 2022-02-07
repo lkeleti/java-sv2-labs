@@ -74,9 +74,11 @@ public class Series {
                 .filter(f -> f.getReleaseDate().isPresent())
                 .filter(f -> f.getReleaseDate().get().isEqual(date) || f.getReleaseDate().get().isBefore(date))
                 .toList();
-        for (Film film : notSeen) {
-            System.out.println(film.getSeason() + "x" + film.getEpisode() + "\t" + film.getTitle());
-        }
+//        for (Film film : notSeen) {
+//            System.out.println(film.getSeason() + "x" + film.getEpisode() + "\t" + film.getTitle());
+//        }
+        notSeen.stream()
+                .forEach(System.out::println);
     }
 
     public String Hetnapja(int ev, int ho, int nap) {

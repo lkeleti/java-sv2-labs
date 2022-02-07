@@ -97,18 +97,9 @@ public class Track {
     }
 
     public double getRectangleArea() {
-        DoubleSummaryStatistics summaryLatitude = trackPoints.stream()
-                .mapToDouble(t->t.getCoordinate().getLatitude())
-                .summaryStatistics();
-        double minLatitude = summaryLatitude.getMin();
-        double maxLatitude = summaryLatitude.getMax();
+        Coordinate minCoordinate = findMinimumCoordinate();
+        Coordinate maxCoordinate = findMaximumCoordinate();
 
-        DoubleSummaryStatistics summaryLongitude = trackPoints.stream()
-                .mapToDouble(t->t.getCoordinate().getLongitude())
-                .summaryStatistics();
-        double minLongitude = summaryLongitude.getMin();
-        double maxLongitude = summaryLongitude.getMax();
-
-        return (maxLatitude - minLatitude) * (maxLongitude-minLongitude);
+        return (maxCoordinate.getLatitude() - minCoordinate.getLatitude()) * (maxCoordinate.getLongitude() - minCoordinate.getLongitude());
     }
 }
