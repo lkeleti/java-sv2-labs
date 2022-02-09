@@ -1,14 +1,13 @@
 package grad.may2020;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Metjelentes {
 
@@ -82,15 +81,28 @@ public class Metjelentes {
         System.out.println("5. feladat");
     }
 
-    public void exercise6() {
+    public void exercise6(String directory) {
         System.out.println("6. feladat");
+        Map<String, StringBuilder> summarizedDatas = new TreeMap<>();
+        for (MetData metData: metDatas) {
+            String key = metData.getSettlement();
+            summarizedDatas.computeIfAbsent(key, m->new StringBuilder());
+            summarizedDatas.get(key).append(metData.getTimeOfMeasurement()).append(" ").append("#".repeat(metData.getWindSpeed())).append("\n");
+        }
+
+        for (Map.Entry<String, StringBuilder> summarizedData: summarizedDatas.entrySet()) {
+            writeToFile(Path.of(directory + summarizedData.getKey() + ".txt"), summarizedData);
+        }
     }
 
-    public void exercise7() {
-        System.out.println("7. feladat");
+    private void writeToFile(Path path, Map.Entry<String, StringBuilder> datas ) {
+        try (BufferedWriter bw = Files.newBufferedWriter(path)) {
+            bw.write(datas.getKey() + "\n");
+            bw.write(datas.getValue().toString());
+        }
+        catch (IOException ioe){
+            throw new IllegalStateException("Can't write file!", ioe);
+        }
     }
 
-    public void exercise8(Path path) {
-        System.out.println("8. feladat");
-    }
 }

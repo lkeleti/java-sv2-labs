@@ -10,7 +10,6 @@ public class MetJelentesService {
         metjelentes.exercise3();
         metjelentes.exercise4();
         metjelentes.exercise5();
-        metjelentes.exercise7();
-        metjelentes.exercise8(Path.of("src/main/resources/grad/summa.txt"));
+        metjelentes.exercise6("src/main/resources/grad/");
     }
 }
