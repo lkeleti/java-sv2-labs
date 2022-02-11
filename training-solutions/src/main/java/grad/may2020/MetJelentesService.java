@@ -1,6 +1,7 @@
 package grad.may2020;
 
 import java.nio.file.Path;
+import java.util.Scanner;
 
 public class MetJelentesService {
     public static void main(String[] args) {
