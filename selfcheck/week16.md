@@ -50,7 +50,7 @@ bemutatottakat kell megcsinálni a videóval együtt!
 * [x] 2022-02-08 konzultáció gyakorlati feladat
 * [x] 2022-02-09 konzultáció részvétel/videó
 * [x] 2022-02-09 konzultáció gyakorlati feladat
-* [ ] 2022-02-10 konzultáció részvétel/videó
-* [ ] 2022-02-10 konzultáció gyakorlati feladat
+* [x] 2022-02-10 konzultáció részvétel/videó
+* [x] 2022-02-10 konzultáció gyakorlati feladat
 * [ ] 2022-02-11 konzultáció részvétel/videó
 * [ ] 2022-02-11 konzultáció gyakorlati feladat
