@@ -37,10 +37,10 @@ bemutatottakat kell megcsinálni a videóval együtt!
 * [x] [Egy tábla csatolása saját magához videó](https://e-learning.training360.com/courses/take/mariadb/lessons/10192493-egy-tabla-csatolasa-sajat-magahoz)
 * [x] [Megszorítások videó](https://e-learning.training360.com/courses/take/mariadb/lessons/10192527-megszoritasok)
 * [x] [Sorrend, névvel ellátott megszorítások videó](https://e-learning.training360.com/courses/take/mariadb/lessons/10192520-sorrend-nevvel-ellatott-megszoritasok)
-* [ ] [Értékek automatikus növelése videó](https://e-learning.training360.com/courses/take/mariadb/lessons/10192525-ertekek-automatikus-novelese)
-* [ ] [UNION - Táblák egyesítése videó](https://e-learning.training360.com/courses/take/mariadb/lessons/10192500-union-tablak-egyesitese)
-* [ ] [HAVING - Csoportfeltételek létrehozása videó](https://e-learning.training360.com/courses/take/mariadb/lessons/10192526-having-csoportfeltetelek-letrehozasa)
-* [ ] [CREATE - Tábla létrehozása, elsődleges és idegen kulcsok megadása videó](https://e-learning.training360.com/courses/take/mariadb/lessons/10192532-create-tabla-letrehozasa-elsodleges-es-idegen-kulcsok-megadasa)
+* [x] [Értékek automatikus növelése videó](https://e-learning.training360.com/courses/take/mariadb/lessons/10192525-ertekek-automatikus-novelese)
+* [x] [UNION - Táblák egyesítése videó](https://e-learning.training360.com/courses/take/mariadb/lessons/10192500-union-tablak-egyesitese)
+* [x] [HAVING - Csoportfeltételek létrehozása videó](https://e-learning.training360.com/courses/take/mariadb/lessons/10192526-having-csoportfeltetelek-letrehozasa)
+* [x] [CREATE - Tábla létrehozása, elsődleges és idegen kulcsok megadása videó](https://e-learning.training360.com/courses/take/mariadb/lessons/10192532-create-tabla-letrehozasa-elsodleges-es-idegen-kulcsok-megadasa)
 
 ## Konzultációk
 
@@ -52,5 +52,5 @@ bemutatottakat kell megcsinálni a videóval együtt!
 * [x] 2022-02-09 konzultáció gyakorlati feladat
 * [x] 2022-02-10 konzultáció részvétel/videó
 * [x] 2022-02-10 konzultáció gyakorlati feladat
-* [ ] 2022-02-11 konzultáció részvétel/videó
-* [ ] 2022-02-11 konzultáció gyakorlati feladat
+* [x] 2022-02-11 konzultáció részvétel/videó
+* [x] 2022-02-11 konzultáció gyakorlati feladat
