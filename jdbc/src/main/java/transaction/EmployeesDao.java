@@ -31,8 +31,7 @@ public class EmployeesDao {
                 Connection conn = dataSource.getConnection();
         ) {
             conn.setAutoCommit(false);
-            try  {
-                PreparedStatement pstmt = conn.prepareStatement("INSERT INTO employees (emp_name) VALUES (?)");
+            try  (PreparedStatement pstmt = conn.prepareStatement("INSERT INTO employees (emp_name) VALUES (?)")) {
                 for (String name : names) {
                     if ((name == null || name.isEmpty())) {
                         throw new IllegalArgumentException("Name can't be empty!");
