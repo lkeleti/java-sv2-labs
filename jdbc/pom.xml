@@ -28,8 +28,8 @@
         </dependency>
         <dependency>
             <groupId>org.flywaydb</groupId>
-            <artifactId>flyway-community-db-support</artifactId>
-            <version>8.4.3</version>
+            <artifactId>flyway-mysql</artifactId>
+            <version>8.5.0</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>

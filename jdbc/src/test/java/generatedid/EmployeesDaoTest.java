@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class employeesDaoTest {
+class EmployeesDaoTest {
     private EmployeesDao employeesDao;
 
     @BeforeEach
@@ -24,7 +24,7 @@ class employeesDaoTest {
             throw new IllegalStateException("Can't connect to MariaDB Server", se);
         }
 
-        Flyway flyway = Flyway.configure().dataSource(dataSource).load();
+        Flyway flyway = Flyway.configure().locations("db/migration/employee").dataSource(dataSource).load();
         flyway.clean();
         flyway.migrate();
 
