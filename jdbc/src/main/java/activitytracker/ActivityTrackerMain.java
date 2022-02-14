@@ -8,9 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ActivityTrackerMain {
-    /*
-    CREATE TABLE activities (id BIGINT AUTO_INCREMENT PRIMARY KEY, start_time TIMESTAMP, activity_desc VARCHAR(255), activity_type VARCHAR(255));
-     */
+
     public static void main(String[] args) {
         MariaDbDataSource dataSource = new MariaDbDataSource();
         try {
@@ -34,8 +32,13 @@ public class ActivityTrackerMain {
         );
 
         for (Activity activity: activities) {
-            long id = activityDao.insertActivity(activity);
+            long id = activityDao.saveActivity(activity);
             activity.setId(id);
         }
+
+        Activity activity = activityDao.findActivityById(1);
+        System.out.println(activity.getDesc());
+        List<Activity> activityList = activityDao.listActivities();
+        System.out.println(activityList);
     }
 }

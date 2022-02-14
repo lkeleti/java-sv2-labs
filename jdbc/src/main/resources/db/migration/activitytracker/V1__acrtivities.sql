@@ -1,0 +1,1 @@
+CREATE TABLE activities (id BIGINT AUTO_INCREMENT PRIMARY KEY, start_time TIMESTAMP, activity_desc VARCHAR(255), activity_type VARCHAR(255));
