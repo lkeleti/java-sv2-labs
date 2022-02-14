@@ -22,7 +22,9 @@ public class ActivityDao {
             pstmt.setString(2, activity.getDesc());
             pstmt.setString(3, activity.getType().toString());
             pstmt.executeUpdate();
-            return getIdByStatement(pstmt);
+            long id = getIdByStatement(pstmt);
+            //saveTrackpoints(activity);
+            return id;
         } catch (SQLException se) {
             throw new IllegalStateException("Can't insert data.", se);
         }
