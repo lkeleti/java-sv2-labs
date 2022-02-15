@@ -133,12 +133,12 @@ public class ActivityDao {
             pstmt.setLong(1, id);
             findTrackPointsByStatement(result, pstmt);
         } catch (SQLException se) {
-            throw new IllegalStateException("Something went wrong while find TrackPoints",se);
+            throw new IllegalStateException("Something went wrong while find TrackPoints", se);
         }
     }
 
     private void findTrackPointsByStatement(Activity result, PreparedStatement pstmt) throws SQLException {
-        try (ResultSet rs  = pstmt.executeQuery()) {
+        try (ResultSet rs = pstmt.executeQuery()) {
             while (rs.next()) {
                 result.addTrackPoint(new TrackPoint(
                         rs.getLong("activity_id"),
@@ -172,7 +172,7 @@ public class ActivityDao {
                         rs.getString("activity_desc"),
                         Type.valueOf(rs.getString("activity_type"))
                 );
-                findTrackPoints(result.getId(),result);
+                findTrackPoints(result.getId(), result);
                 activities.add(result);
             }
             return activities;
@@ -180,19 +180,46 @@ public class ActivityDao {
     }
 
     public void saveImageToActivity(long activityId, Image image) {
-        try ( Connection conn = dataSource.getConnection();
-              PreparedStatement pstmt = conn.prepareStatement("INSERT INTO images (activity_id, filename, content) " +
-                      "VALUES(?,?,?)")
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement("INSERT INTO images (activity_id, filename, content) " +
+                     "VALUES(?,?,?)")
         ) {
-            pstmt.setLong(1,activityId);
+            pstmt.setLong(1, activityId);
             pstmt.setString(2, image.getFilename());
             Blob blob = conn.createBlob();
             blob.setBytes(1, image.getContent());
-            pstmt.setBlob(3,blob);
+            pstmt.setBlob(3, blob);
             pstmt.executeUpdate();
 
         } catch (SQLException se) {
             throw new IllegalStateException("Can't save images into table.", se);
+        }
+    }
+
+    public Image loadImageToActivity(long activityId, String filename) {
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM images WHERE activity_id = ? AND filename=?;");
+        ) {
+            pstmt.setLong(1, activityId);
+            pstmt.setString(2, filename);
+
+            return getImageByStatement(pstmt);
+
+        } catch (SQLException sqle) {
+            throw new IllegalStateException("Can't load image!", sqle);
+        }
+    }
+
+    private Image getImageByStatement(PreparedStatement pstmt) throws SQLException {
+        try (ResultSet rs = pstmt.executeQuery()) {
+            if (rs.next()) {
+                return new Image(
+                        rs.getLong("id"),
+                        rs.getString("filename"),
+                        rs.getBytes("content")
+                );
+            }
+            throw new IllegalArgumentException("Can't find image.");
         }
     }
 }

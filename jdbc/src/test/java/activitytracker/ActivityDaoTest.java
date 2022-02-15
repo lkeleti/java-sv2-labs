@@ -106,4 +106,27 @@ class ActivityDaoTest {
             activityDao.saveImageToActivity(activity.getId(), activity.getImage());
         }
     }
+    @Test
+    void loadImageToActivityTest() {
+        for (Activity activity: activities) {
+            activityDao.saveActivity(activity);
+        }
+        List<Activity> activitiesResult = activityDao.listActivities();
+        try{
+            byte[] image1 = Files.readAllBytes(Path.of("src/main/resources/images/basket-ball.png"));
+            activitiesResult.get(0).setImage(new Image(0, "basket-ball.png", image1));
+        } catch (IOException ioe) {
+            throw new IllegalStateException("Can't read image", ioe);
+        }
+
+        activityDao.saveImageToActivity(activitiesResult.get(0).getId(), activitiesResult.get(0).getImage());
+
+        Image image = activityDao.loadImageToActivity(1,"basket-ball.png");
+        assertEquals(20539, image.getContent().length);
+        try {
+            Files.write(Path.of("src/main/resources/images/basket-ball_1.png"), image.getContent());
+        } catch (IOException ioe) {
+            throw new IllegalStateException("Cam't write to file.", ioe);
+        }
+    }
 }
