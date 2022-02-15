@@ -5,6 +5,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mariadb.jdbc.MariaDbDataSource;
 
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -66,6 +70,7 @@ class ActivityDaoTest {
 
         Activity activity = activityDao.findActivityById(2);
         assertEquals("Runing 10 kms", activity.getDesc());
+        assertEquals(3, activity.getTrackPoints().size());
     }
 
     @Test
@@ -76,5 +81,29 @@ class ActivityDaoTest {
 
         List<Activity> activitiesResult = activityDao.listActivities();
         assertEquals(3, activitiesResult.size());
+        assertEquals(3, activitiesResult.get(1).getTrackPoints().size());
+    }
+
+    @Test
+    void saveImageToActivityTest() {
+        for (Activity activity: activities) {
+            activityDao.saveActivity(activity);
+        }
+
+        List<Activity> activitiesResult = activityDao.listActivities();
+        try{
+            byte[] image1 = Files.readAllBytes(Path.of("src/main/resources/images/basket-ball.png"));
+            activitiesResult.get(0).setImage(new Image(0, "basket-ball.png", image1));
+            byte[] image2 = Files.readAllBytes(Path.of("src/main/resources/images/run.png"));
+            activitiesResult.get(1).setImage(new Image(0, "run.png", image2));
+            byte[] image3 = Files.readAllBytes(Path.of("src/main/resources/images/stretching.png"));
+            activitiesResult.get(2).setImage(new Image(0, "stretching.png", image3));
+        } catch (IOException ioe) {
+            throw new IllegalStateException("Can't read image", ioe);
+        }
+
+        for (Activity activity: activitiesResult) {
+            activityDao.saveImageToActivity(activity.getId(), activity.getImage());
+        }
     }
 }

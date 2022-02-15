@@ -101,7 +101,6 @@ public class ActivityDao {
         try (
                 Connection conn = dataSource.getConnection();
                 PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM activities WHERE id = ?");
-
         ) {
             pstmt.setLong(1, id);
             return getActivity(id, pstmt);
@@ -115,12 +114,39 @@ public class ActivityDao {
                 ResultSet rs = pstmt.executeQuery();
         ) {
             if (rs.next()) {
-                return new Activity(rs.getLong("id"),
+                Activity result = new Activity(rs.getLong("id"),
                         rs.getTimestamp("start_time").toLocalDateTime(),
                         rs.getString("activity_desc"),
                         Type.valueOf(rs.getString("activity_type")));
+                findTrackPoints(id, result);
+                return result;
             }
             throw new IllegalArgumentException("Can't find specified id: " + id);
+        }
+    }
+
+    private void findTrackPoints(long id, Activity result) {
+        try (
+                Connection conn = dataSource.getConnection();
+                PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM trackpoints WHERE activity_id =?;")
+        ) {
+            pstmt.setLong(1, id);
+            findTrackPointsByStatement(result, pstmt);
+        } catch (SQLException se) {
+            throw new IllegalStateException("Something went wrong while find TrackPoints",se);
+        }
+    }
+
+    private void findTrackPointsByStatement(Activity result, PreparedStatement pstmt) throws SQLException {
+        try (ResultSet rs  = pstmt.executeQuery()) {
+            while (rs.next()) {
+                result.addTrackPoint(new TrackPoint(
+                        rs.getLong("activity_id"),
+                        rs.getTimestamp("track_time").toLocalDateTime().toLocalDate(),
+                        rs.getDouble("lat"),
+                        rs.getDouble("lon")
+                ));
+            }
         }
     }
 
@@ -140,16 +166,33 @@ public class ActivityDao {
         List<Activity> activities = new ArrayList<>();
         try (ResultSet rs = stmt.getResultSet()) {
             while (rs.next()) {
-                activities.add(
-                        new Activity(
-                                rs.getLong("id"),
-                                rs.getTimestamp("start_time").toLocalDateTime(),
-                                rs.getString("activity_desc"),
-                                Type.valueOf(rs.getString("activity_type"))
-                        )
+                Activity result = new Activity(
+                        rs.getLong("id"),
+                        rs.getTimestamp("start_time").toLocalDateTime(),
+                        rs.getString("activity_desc"),
+                        Type.valueOf(rs.getString("activity_type"))
                 );
+                findTrackPoints(result.getId(),result);
+                activities.add(result);
             }
             return activities;
+        }
+    }
+
+    public void saveImageToActivity(long activityId, Image image) {
+        try ( Connection conn = dataSource.getConnection();
+              PreparedStatement pstmt = conn.prepareStatement("INSERT INTO images (activity_id, filename, content) " +
+                      "VALUES(?,?,?)")
+        ) {
+            pstmt.setLong(1,activityId);
+            pstmt.setString(2, image.getFilename());
+            Blob blob = conn.createBlob();
+            blob.setBytes(1, image.getContent());
+            pstmt.setBlob(3,blob);
+            pstmt.executeUpdate();
+
+        } catch (SQLException se) {
+            throw new IllegalStateException("Can't save images into table.", se);
         }
     }
 }

@@ -11,6 +11,7 @@ public class Activity {
     private String desc;
     private Type type;
     private List<TrackPoint> trackPoints = new ArrayList<>();
+    private Image image = null;
 
     public Activity(long id, LocalDateTime startTime, String desc, Type type) {
         this.id = id;
@@ -45,5 +46,13 @@ public class Activity {
 
     public void addTrackPoint(TrackPoint trackPoint) {
         trackPoints.add(trackPoint);
+    }
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
     }
 }
