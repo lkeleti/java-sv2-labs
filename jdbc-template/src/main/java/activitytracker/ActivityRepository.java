@@ -7,11 +7,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.sql.DataSource;
 import java.sql.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
-import java.util.Map;
 
 public class ActivityRepository {
     private JdbcTemplate jdbcTemplate;
@@ -30,7 +28,7 @@ public class ActivityRepository {
         jdbcTemplate.update(conn -> getKeyAfterInsert(activity, conn), keyHolder);
         long id = keyHolder.getKey().longValue();
         activity.setId(id);
-        saveTrackpoints(id, activity.getTrackPoints());
+        saveTrackPoints(id, activity.getTrackPoints());
         return activity;
     }
 
@@ -44,7 +42,7 @@ public class ActivityRepository {
     }
 
     @Transactional
-    private void saveTrackpoints(long activityId, List<TrackPoint> trakpoints) {
+    public void saveTrackPoints(long activityId, List<TrackPoint> trakpoints) {
         for (TrackPoint trackPoint : trakpoints) {
             if (trackPoint.getLat() > 90 || trackPoint.getLat() < -90 || trackPoint.getLon() > 180 || trackPoint.getLon() < -180) {
                 throw new IllegalArgumentException("Invalid latitude or longitude value!");
