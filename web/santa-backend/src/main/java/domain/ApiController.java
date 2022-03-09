@@ -34,6 +34,12 @@ public class ApiController {
         );
     }
 
+    @GetMapping(
+            value = "/notget"
+    )
+    public List<Child> getChildByState() {
+        return childRepository.findNotGetPresent();
+    }
 
     @GetMapping(
             value = "/cities/{city}/children"
