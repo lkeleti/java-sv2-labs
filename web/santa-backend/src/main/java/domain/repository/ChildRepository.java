@@ -11,4 +11,7 @@ public interface ChildRepository extends JpaRepository<Child, Long>{
 
     @Query("SELECT c FROM Child c WHERE c.city = :city")
     List<Child> findByCity(@Param("city") String city);
+
+    @Query("SELECT c FROM Child c WHERE c.state = 'NOT_GET_PRESENT'")
+    List<Child> findNotGetPresent();
 }
