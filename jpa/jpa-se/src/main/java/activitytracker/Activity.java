@@ -45,6 +45,9 @@ public class Activity {
     @OrderBy("time")
     private List<TrackPoint> trackPoints = new ArrayList<>();
 
+    @ManyToMany(mappedBy = "activities")
+    private List<Area> areas = new ArrayList<>();
+
     public Activity() {
     }
 
@@ -135,5 +138,17 @@ public class Activity {
     public void addTrackPoint(TrackPoint trackPoint) {
         trackPoints.add(trackPoint);
         trackPoint.setActivity(this);
+    }
+
+    public List<Area> getAreas() {
+        return areas;
+    }
+
+    public void setAreas(List<Area> areas) {
+        this.areas = areas;
+    }
+
+    public void addArea(Area area) {
+        areas.add(area);
     }
 }

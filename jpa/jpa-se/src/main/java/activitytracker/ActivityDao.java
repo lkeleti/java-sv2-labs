@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ActivityDao {
 
-    private EntityManagerFactory entityManagerFactory;
+    private final EntityManagerFactory entityManagerFactory;
 
     public ActivityDao(EntityManagerFactory entityManagerFactory) {
         this.entityManagerFactory = entityManagerFactory;
@@ -64,6 +64,15 @@ public class ActivityDao {
     public Activity findActivityByIdWithTrackPoints(long id) {
         EntityManager em = entityManagerFactory.createEntityManager();
         Activity activity = em.createQuery("SELECT a FROM Activity a JOIN FETCH a.trackPoints WHERE a.id =:id ORDER BY a.description", Activity.class)
+                .setParameter("id", id)
+                .getSingleResult();
+        em.close();
+        return activity;
+    }
+
+    public Activity findActivityByIdWithAreas(long id) {
+        EntityManager em = entityManagerFactory.createEntityManager();
+        Activity activity = em.createQuery("SELECT a FROM Activity a JOIN FETCH a.areas WHERE a.id =:id ORDER BY a.description", Activity.class)
                 .setParameter("id", id)
                 .getSingleResult();
         em.close();

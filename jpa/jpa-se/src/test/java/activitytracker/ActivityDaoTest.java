@@ -14,11 +14,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class ActivityDaoTest {
 
     ActivityDao activityDao;
+    AreaDao areaDao;
 
     @BeforeEach
      void setUp() {
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("pu");
         activityDao = new ActivityDao(factory);
+        areaDao = new AreaDao(factory);
 
         Activity a1 = new Activity(
                 LocalDateTime.of(2022,4,4,23,46),
@@ -105,5 +107,38 @@ class ActivityDaoTest {
         Activity activityReadBack = activityDao.findActivityByIdWithTrackPoints(id);
         assertEquals(2, activityReadBack.getTrackPoints().size());
         assertEquals(2, activityReadBack.getTrackPoints().get(0).getLat());
+    }
+
+    @Test
+    void updateActivityWithArea() {
+        Area area1 = new Area("JNSZ");
+        Area area2 = new Area("BP");
+        Area area3 = new Area("BKK");
+
+        Activity a1 = new Activity(
+                LocalDateTime.of(2022,4,8,12,0),
+                "Singing",
+                ActivityType.RUNNING);
+
+        activityDao.saveActivity(a1);
+
+        Activity a2 = new Activity(
+                LocalDateTime.of(2022,4,10,18,0),
+                "Dancing",
+                ActivityType.RUNNING);
+
+        activityDao.saveActivity(a2);
+
+        area1.addActivity(a1);
+        area2.addActivity(a1);
+
+        area2.addActivity(a2);
+        area3.addActivity(a2);
+
+        areaDao.saveArea(area1);
+        areaDao.saveArea(area2);
+        areaDao.saveArea(area3);
+
+        assertEquals(2, activityDao.findActivityByIdWithAreas(a1.getId()).getAreas().size());
     }
 }
