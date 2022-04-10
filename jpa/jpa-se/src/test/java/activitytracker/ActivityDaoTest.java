@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -23,6 +24,10 @@ class ActivityDaoTest {
                 LocalDateTime.of(2022,4,4,23,46),
                 "Walking",
                 ActivityType.RUNNING);
+        a1.addLabel("Nagy túra");
+        a1.addLabel("Kint a természetben");
+        a1.addTrackPoint(new TrackPoint(LocalDate.of(2022,4,5),1,1));
+        a1.addTrackPoint(new TrackPoint(LocalDate.of(2022,4,1),2,2));
         activityDao.saveActivity(a1);
 
         Activity a2 =  new Activity(
@@ -83,5 +88,22 @@ class ActivityDaoTest {
         activityDao.updateActivity(id, "Updated");
         Activity activityFromDb = activityDao.findActivityById(id);
         assertEquals("Updated", activityFromDb.getDescription());
+    }
+
+    @Test
+    void findActivityByIdWithLabelsTest() {
+        List<Activity> activities = activityDao.listActivities();
+        Long id = activities.get(1).getId();
+        Activity activity = activityDao.findActivityByIdWithLabels(id);
+        assertEquals(2, activity.getLabels().size());
+    }
+
+    @Test
+    void findActivityByIdWithTrackPointsTest() {
+        List<Activity> activities = activityDao.listActivities();
+        Long id = activities.get(1).getId();
+        Activity activityReadBack = activityDao.findActivityByIdWithTrackPoints(id);
+        assertEquals(2, activityReadBack.getTrackPoints().size());
+        assertEquals(2, activityReadBack.getTrackPoints().get(0).getLat());
     }
 }

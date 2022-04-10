@@ -51,4 +51,22 @@ public class ActivityDao {
         em.getTransaction().commit();
         em.close();
     }
+
+    public Activity findActivityByIdWithLabels(long id) {
+        EntityManager em = entityManagerFactory.createEntityManager();
+        Activity activity = em.createQuery("SELECT a FROM Activity a JOIN FETCH a.labels WHERE a.id =:id ORDER BY a.description", Activity.class)
+                .setParameter("id", id)
+                .getSingleResult();
+        em.close();
+        return activity;
+    }
+
+    public Activity findActivityByIdWithTrackPoints(long id) {
+        EntityManager em = entityManagerFactory.createEntityManager();
+        Activity activity = em.createQuery("SELECT a FROM Activity a JOIN FETCH a.trackPoints WHERE a.id =:id ORDER BY a.description", Activity.class)
+                .setParameter("id", id)
+                .getSingleResult();
+        em.close();
+        return activity;
+    }
 }

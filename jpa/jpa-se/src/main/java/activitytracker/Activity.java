@@ -2,6 +2,8 @@ package activitytracker;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "activities")
@@ -34,6 +36,14 @@ public class Activity {
 
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
+    @ElementCollection
+    @CollectionTable(name = "activity_labels")
+    private List<String> labels = new ArrayList<>();
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, orphanRemoval = true, mappedBy = "activity")
+    @OrderBy("time")
+    private List<TrackPoint> trackPoints = new ArrayList<>();
 
     public Activity() {
     }
@@ -100,5 +110,30 @@ public class Activity {
     @PreUpdate
     private void beforeUpdate() {
         updatedAt = LocalDateTime.now();
+    }
+
+    public List<String> getLabels() {
+        return labels;
+    }
+
+    public void setLabels(List<String> labels) {
+        this.labels = labels;
+    }
+
+    public void addLabel(String label) {
+        labels.add(label);
+    }
+
+    public List<TrackPoint> getTrackPoints() {
+        return trackPoints;
+    }
+
+    public void setTrackPoints(List<TrackPoint> trackPoints) {
+        this.trackPoints = trackPoints;
+    }
+
+    public void addTrackPoint(TrackPoint trackPoint) {
+        trackPoints.add(trackPoint);
+        trackPoint.setActivity(this);
     }
 }
